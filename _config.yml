@@ -1,3 +1,5 @@
-theme: jekyll-theme-minimal
 title: Kelexer's homepage
 description: Work In Progress
+theme: jekyll-theme-minimal
+baseurl: ""
+url: "https://Kelexer1.github.io"
