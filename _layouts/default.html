@@ -2,14 +2,18 @@
 <html>
 <head>
     <title>{{ page.title | default: site.title }}</title>
-    <meta name="description" content="{{ site.description }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A centralized hub for all things Kelexer">
+    <meta name="keywords" content="Kelexer, Portfolio, Blog, Bio, Biography, Hub">
+    <meta name="author" content="Kelexer">
 </head>
-<body>
-    <header>
-        <h1>Hi, I'm the default HTML file for {{ site.title }}</h1>
-    </header>
     <main>
-        {{ content }}
+        <header>
+            {% include navbar.html %}
+        </header>
+        <body>
+            {{ content }}
+        </body>
     </main>
-</body>
 </html>

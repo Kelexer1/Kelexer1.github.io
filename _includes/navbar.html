@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>NavBar</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  </head>
+
+  <style>
+    .NavBar {
+        display: flex;
+        align-items: center;
+        padding: 1rem;
+        margin: 0px;
+        justify-content: space-between;
+        width: 100%;
+        background-color: #3D52A0;
+    }
+    .NavBar ul li a {
+        color: #EDE8F5;
+        text-decoration: none;
+        transition: transform 0.5s ease;
+        display: inline-block;
+    }
+    .NavBar ul li a:hover {
+        color: #ADBBDA;
+        transform: scale(1.2);
+        transform-origin: center;
+    }
+    .NavBar ul{
+        font-family: 'Poppins', sans-serif;
+        list-style-type: none;
+        display: flex;
+        gap: 3rem;
+        padding-right: 5%;
+    }
+    .NavBar img {
+        width: 4%;
+        margin: 0.2em;
+    }
+    body {
+    margin: 0;
+    }
+    #Logo {
+        transition: transform 0.3s ease-out
+    }
+    #Logo:hover {
+        transform: rotate(360deg);
+    }
+  </style>
+
+  <body>
+    <div class="NavBar">
+        <img src="/Resources/Trinket Labs Logo.svg" alt="Logo" id="Logo"/>
+        <ul>
+            <li><a href="">Home</a></li>
+            <li><a href="">Portfolio</a></li>
+            <li><a href="">Blog</a></li>
+            <li><a href="">Placeholder</a></li>
+        </ul>
+    </div>
+  </body>
+</html>
