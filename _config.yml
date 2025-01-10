@@ -1,3 +1,6 @@
 theme: jekyll-theme-minimal
-baseurl: ""
-url: "https://Kelexer1.github.io"
+baseurl: "/Kelexer1"
+url: "http://127.0.0.1:4000"
+sass:
+  sass_dir: _sass
+  style: compressed

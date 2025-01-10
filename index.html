@@ -1,14 +1,73 @@
 ---
 layout: default
-title: Kelexer
-description: Work In Progress ;-;
+title: Kelexer [Home]
+description: Landing page
 ---
 
 <!DOCTYPE html>
 <html lang="en">
-    <body>
-        <header>
-            <h2>{{ page.description }}</h2>
-        </header>
-    </body>
+    <head>
+        <link rel="stylesheet" href="{{ site.baseurl}}/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    </head>
+    <style>
+        p, ul {
+            font-family: 'Poppins', sans-serif;
+            color: aliceblue;
+        }
+        h1, h2 {
+            font-family: 'Chakra Petch';
+            color: aliceblue;
+        }
+        .Bio {
+            margin-left: 2rem;
+            margin-right: 2rem;
+        }
+        #intro-text {
+            font-weight: 800;
+            overflow: hidden;
+            margin-bottom: 1rem;
+            text-align: center;
+            font-size: 70px;
+        }
+        #bio-text {
+            margin-right: 10rem;
+            line-height: 1.5rem;
+            color: #b1b1b1;
+        }
+        #animation-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+    <main>
+        <!-- Bio Section -->
+        <div class="wrap" id="animation-container">{% include dust.html %}</div>
+        <div id="biography">
+            <h1 class="Bio" id="intro-text"></h1>
+            <hr class="Bio">
+        </div>
+        <!-- Interests Section -->
+        <div id="interests">
+            <p class="Bio" id="bio-text">
+                I'm a university student pursuing computer science, driven by a passion
+                for learning and creating. I have been creating digital content 
+                for 5 years, working with game design, web design, graphic design, 
+                3D modelling, computer engineering, and robotics. I love taking on 
+                new projects that build my repertoire of skills, and I'm always happy 
+                to chat! Outside of content creation, I like playing video games and 
+                listening to music. Check out the navigation bar to view my portfolio, 
+                accomplishments, blog, and contacts!
+            </p>
+        </div>
+        <script src="{{ site.baseurl }}/js/introtexttype.js"></script>
+    </main>
 </html>
+<!-- TODO: Navbar for mobile, interests, icons, styling, bio -->
