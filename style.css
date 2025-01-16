@@ -4,8 +4,12 @@
 
 #animation-container {
   background: black;
-  background-image: radial-gradient(circle at center, white 0%, #222 10%, black 60%);
+  background-image: radial-gradient(circle at center, rgb(185, 185, 185) 0%, #222 7%, black 40%);
   overflow: hidden;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .wrap {
