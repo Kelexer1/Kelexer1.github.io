@@ -1,0 +1,167 @@
+---
+layout: default
+title: Kelexer [Contacts]
+description: Contact page
+---
+
+<!DOCTYPE html>
+<html lang="en">
+    <style>
+        h1, h2, p, ul {
+            font-family: 'Poppins', sans-serif;
+        }
+        #contactListContainer {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        #contactList {
+            list-style-type: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+        }
+        #contactList li {
+            margin-right: 3rem;
+        }
+        #contactList a {
+            text-decoration: none;
+            color: #000;
+            display: flex;
+            align-items: center;
+            vertical-align: middle;
+        }
+        #contactList a p {
+            margin-left: 1rem;
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+        #contactList a img {
+            width: 15px;
+            height: auto;
+            vertical-align: middle;
+        }
+        #bioHR {
+            margin-left: 1rem;
+            margin-right: 1rem;
+        }
+        @media (max-width: 768px) {
+            #contactList {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            #contactList {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+    <body>
+    <!-- Interests Section -->
+    <div>
+        <div class="Bio ListSection">
+            <h2 class="ListText"><u>My Skills</u></h2>
+            <div class="ListContainer">
+                <ul class="List">
+                    <li>Game Development</li>
+                    <li>Cybersecurity</li>
+                    <li>Microsoft Office</li>
+                    <li>Graphic Design</li>
+                    <li>Game Design</li>
+                    <li>3D Modelling</li>
+                    <li>GitHub</li>
+                    <li>Blender</li>
+                    <li>Figma</li>
+                    <li>Robotics</li>
+                    <li>Computer Engineering</li>
+                    <li>Computer Hardware</li>
+                    <li>Computer Software</li>
+                    <li>Linux</li>
+                    <li>UI / UX Design</li>
+                    <li>Web Design</li>
+                    <li>Programming</li>
+                </ul>
+            </div>
+        </div>
+        <hr class="InterestSeparator Bio">
+        <div>
+            <div class="Bio ListSection">
+                <h2 class="ListText"><u>Programming Languages</u></h2>
+                <div class="ListContainer">
+                    <ul class="List">
+                        <li>Python</li>
+                        <li>Java</li>
+                        <li>C++</li>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>Java Script</li>
+                        <li>CV2 (Rec Room)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <hr class="InterestSeparator Bio">
+        <div>
+            <div class="Bio ListSection">
+                <h2 class="ListText"><u>Favorite Video Games</u></h2>
+                <div class="ListContainer">
+                    <ul class="List">
+                        <li>Rec Room</li>
+                        <li>Clash Royale</li>
+                        <li>Brawl Stars</li>
+                        <li>Survivor.io</li>
+                        <li>Phasmophobia</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <hr class="InterestSeparator Bio">
+        <div>
+            <div class="Bio ListSection">
+                <h2 class="ListText"><u>My Hobbies</u></h2>
+                <div class="ListContainer">
+                    <ul class="List">
+                        <li>Gaming</li>
+                        <li>Virtual Reality</li>
+                        <li>Game Development</li>
+                        <li>Programming Side Projects</li>
+                        <li>Self Teaching</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <hr class="InterestSeparator Bio">
+        <div>
+            <div class="Bio ListSection">
+                <h2 class="ListText"><u>Favorite Movies / TV Shows</u></h2>
+                <div class="ListContainer">
+                    <ul class="List">
+                        <li>Invincible</li>
+                        <li>The Boys</li>
+                        <li>Rick and Morty</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <hr class="InterestSeparator Bio">
+        <div>
+            <div class="Bio ListSection">
+                <h2 class="ListText"><u>Favorite Artists</u></h2>
+                <div class="ListContainer">
+                    <ul class="List">
+                        <li>Kendrick Lamar</li>
+                        <li>Eminem</li>
+                        <li>Juice WRLD</li>
+                        <li>Tyler, The Creator</li>
+                        <li>SZA</li>
+                        <li>Logic</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    </body>
+</html>

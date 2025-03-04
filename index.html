@@ -21,121 +21,26 @@ description: Landing page
                 <hr class="Bio">
                 <p class="Bio" id="bio-text">
                     I'm a university student pursuing computer science, driven by a passion
-                    for learning and creating. I have been creating digital content 
-                    for 5 years, working with game design, web design, cybersecurity, graphic design, 
-                    3D modelling, computer engineering, and robotics. I love taking on 
-                    new projects that build my repertoire of skills, and I'm always happy 
-                    to chat! Check out the navigation bar to view my portfolio, 
+                    for learning and creating. I have been creating digital content
+                    for 5 years, working with game design, web design, cybersecurity, graphic design,
+                    3D modelling, computer engineering, and robotics. I love taking on
+                    new projects that build my repertoire of skills, and I'm always happy
+                    to chat! Check out the navigation bar to view my portfolio,
                     accomplishments, blog, and contacts!
                 </p>
                 <hr class="Bio">
             </div>
         </div>
-        <!-- Interests Section -->
-        <div>
-            <div class="Bio ListSection">
-                <h2 class="ListText"><u>My Skills</u></h2>
-                <div class="ListContainer">
-                    <ul class="List">
-                        <li>Game Development</li>
-                        <li>Cybersecurity</li>
-                        <li>Microsoft Office</li>
-                        <li>Graphic Design</li>
-                        <li>Game Design</li>
-                        <li>3D Modelling</li>
-                        <li>GitHub</li>
-                        <li>Blender</li>
-                        <li>Figma</li>
-                        <li>Robotics</li>
-                        <li>Computer Engineering</li>
-                        <li>Computer Hardware</li>
-                        <li>Computer Software</li>
-                        <li>Linux</li>
-                        <li>UI / UX Design</li>
-                        <li>Web Design</li>
-                        <li>Programming</li>
-                    </ul>
-                </div>
-            </div>
-            <hr class="InterestSeparator Bio">
-            <div>
-                <div class="Bio ListSection">
-                    <h2 class="ListText"><u>Programming Languages</u></h2>
-                    <div class="ListContainer">
-                        <ul class="List">
-                            <li>Python</li>
-                            <li>Java</li>
-                            <li>C++</li>
-                            <li>HTML</li>
-                            <li>CSS</li>
-                            <li>CV2 (Rec Room)</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <hr class="InterestSeparator Bio">
-            <div>
-                <div class="Bio ListSection">
-                    <h2 class="ListText"><u>Favorite Video Games</u></h2>
-                    <div class="ListContainer">
-                        <ul class="List">
-                            <li>Rec Room</li>
-                            <li>Clash Royale</li>
-                            <li>Brawl Stars</li>
-                            <li>Survivor.io</li>
-                            <li>Phasmophobia</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <hr class="InterestSeparator Bio">
-            <div>
-                <div class="Bio ListSection">
-                    <h2 class="ListText"><u>My Hobbies</u></h2>
-                    <div class="ListContainer">
-                        <ul class="List">
-                            <li>Gaming</li>
-                            <li>Virtual Reality</li>
-                            <li>Game Development</li>
-                            <li>Programming Side Projects</li>
-                            <li>Self Teaching</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <hr class="InterestSeparator Bio">
-            <div>
-                <div class="Bio ListSection">
-                    <h2 class="ListText"><u>Favorite Movies / TV Shows</u></h2>
-                    <div class="ListContainer">
-                        <ul class="List">
-                            <li>Invincible</li>
-                            <li>The Boys</li>
-                            <li>Rick and Morty</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <hr class="InterestSeparator Bio">
-            <div>
-                <div class="Bio ListSection">
-                    <h2 class="ListText"><u>Favorite Artists</u></h2>
-                    <div class="ListContainer">
-                        <ul class="List">
-                            <li>Kendrick Lamar</li>
-                            <li>Eminem</li>
-                            <li>Juice WRLD</li>
-                            <li>Tyler, The Creator</li>
-                            <li>Logic</li>
-                            <li>Travis Scott</li>
-                            <li>Kanye West</li>
-                            <li>JID</li>
-                        </ul>
-                    </div>
-                </div>
+        <!-- Contact Section -->
+        <div id="contactSection">
+            <h2 class="Bio" id="contactText">
+                Contact Me
+            </h2>
+            <div id="contactListContainer">
+                {% include contacts.html %}
             </div>
         </div>
         <script src="{{ site.baseurl }}/js/introtexttype.js"></script>
     </main>
 </html>
-<!-- TODO: Navbar for mobile, interests, icons, styling, bio -->
+<!-- TODO: Navbar for mobile, interests, icons-->

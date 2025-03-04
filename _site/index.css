@@ -128,3 +128,59 @@ hr {
         font-size: 20px;
     }
 }
+
+#contactText {
+    background-color: black;
+    margin: 0;
+    padding: 1em 0.5em;
+    text-align: center;
+}
+
+#contactListContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: black;
+}
+#contactList {
+    list-style-type: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+}
+#contactList li {
+    margin-right: 3rem;
+}
+#contactList a {
+    text-decoration: none;
+    color: #000;
+    display: flex;
+    align-items: center;
+    vertical-align: middle;
+}
+#contactList a p {
+    margin-left: 1rem;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+#contactList a img {
+    width: 15px;
+    height: auto;
+    vertical-align: middle;
+}
+#bioHR {
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+@media (max-width: 768px) {
+    #contactList {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    #contactList {
+        grid-template-columns: 1fr;
+    }
+}
