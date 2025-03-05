@@ -1,14 +1,46 @@
 ---
 layout: default
-title: Kelexer
-description: Work In Progress ;-;
+title: Kelexer [Home]
+description: Landing page
 ---
 
 <!DOCTYPE html>
 <html lang="en">
-    <body>
-        <header>
-            <h2>{{ page.description }}</h2>
-        </header>
-    </body>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="index.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    </head>
+    <main>
+        <!-- Bio Section -->
+        <div id="heroSection">
+            <div class="wrap" id="animation-container">{% include dust.html %}</div>
+            <div id="biography">
+                <h1 class="Bio" id="intro-text"></h1>
+                <hr class="Bio">
+                <p class="Bio" id="bio-text">
+                    I'm a university student pursuing computer science, driven by a passion
+                    for learning and creating. I have been creating digital content
+                    for 5 years, working with game design, web design, cybersecurity, graphic design,
+                    3D modelling, computer engineering, and robotics. I love taking on
+                    new projects that build my repertoire of skills, and I'm always happy
+                    to chat! Check out the navigation bar to view my portfolio,
+                    accomplishments, blog, and contacts!
+                </p>
+                <hr class="Bio">
+            </div>
+        </div>
+        <!-- Contact Section -->
+        <div id="contactSection">
+            <h2 class="Bio" id="contactText">
+                Contact Me
+            </h2>
+            <div id="contactListContainer">
+                {% include contacts.html %}
+            </div>
+        </div>
+        <script src="js/introtexttype.js"></script>
+    </main>
 </html>
+<!-- TODO: Navbar for mobile, interests, icons-->
