@@ -1,7 +1,16 @@
+::-webkit-scrollbar {
+    display: none;
+}
+
+html {
+    scrollbar-width: none;
+}
+
 body {
     margin: 0;
     background-color: black;
     font-family: "Chakra Petch";
+    -ms-overflow-style: none;
 }
 
 .card {
@@ -10,8 +19,11 @@ body {
     background-image: radial-gradient(circle, white 0%, lightgray 20%, darkcyan 100%);
     border-radius: 5px;
     border: 2px solid cyan;
-    margin: 0.25rem;
+    margin-right: 0.5rem;
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
     display: flex;
+    box-sizing: border-box;
     flex-direction: column;
     justify-content: center;
     align-items: center;
