@@ -5,9 +5,10 @@ document.addEventListener("DOMContentLoaded", function() {
         const toggleableCardsContainer = persistentCardsContainer.nextElementSibling;
 
         const cards = Array.from(container.children);
-        const cardWidth = cards[0].offsetWidth;
-        const containerWidth = persistentCardsContainer.offsetWidth;
-        const itemsPerRow = Math.floor(containerWidth / cardWidth) - 1;
+        const cardStyle = getComputedStyle(cards[0]);
+        const cardWidth = cards[0].getBoundingClientRect().width + parseFloat(cardStyle.marginLeft) + parseFloat(cardStyle.marginRight);
+        const containerWidth = persistentCardsContainer.getBoundingClientRect().width;
+        const itemsPerRow = Math.floor(containerWidth / cardWidth);
 
         cards.forEach((card, index) => {
             if (index < itemsPerRow) {
