@@ -17,6 +17,17 @@ document.addEventListener("DOMContentLoaded", function() {
                 toggleableCardsContainer.appendChild(card);
             }
         });
+
+        const parentSection = container.closest('.section')
+        if (parentSection) {
+            const expanderElement = parentSection.querySelector('.sectionExpand');
+            if (expanderElement) {
+                console.log(toggleableCardsContainer.childElementCount)
+                if (toggleableCardsContainer.childElementCount == 0) {
+                    expanderElement.style.display = "none";
+                }
+            }
+        }
     });
 });
 
@@ -24,5 +35,12 @@ function sectionExpand(section) {
     const toggleableCards = document.querySelector(`.toggleableCards[data-section="${section}"]`);
     if (toggleableCards) {
         toggleableCards.classList.toggle('expanded');
+    }
+    const parentSection = toggleableCards.closest('.section');
+    if (parentSection) {
+        const expanderElement = parentSection.querySelector('.sectionExpand button');
+        if (expanderElement) {
+            expanderElement.classList.toggle('expanded');
+        }
     }
 }
