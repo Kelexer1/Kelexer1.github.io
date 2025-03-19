@@ -143,84 +143,146 @@ body {
     <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="blog.css">
   </head>
-  <div class="toolBar">
-    <div class="filterBar">
-      <button id="filterButton">☰ Tag Filters</button>
-      <form>
-        <input type="text" id="search" placeholder="Search Posts">
-      </form>
+  <body>
+    <div class="toolBar">
+      <div class="filterBar">
+        <button id="filterButton" onclick="showFilterMenu()">☰ Tag Filters</button>
+        <ul class="tagFilters">
+          <li>
+            <a href="javascript:void(0);" onclick="filterPosts('All Posts')">All Posts</a>
+          </li>
+          
+          
+            <li>
+              <a href="javascript:void(0);" onclick="filterPosts('blog_stuff')">blog_stuff</a>
+            </li>
+          
+            <li>
+              <a href="javascript:void(0);" onclick="filterPosts('idk')">idk</a>
+            </li>
+          
+            <li>
+              <a href="javascript:void(0);" onclick="filterPosts('test')">test</a>
+            </li>
+          
+            <li>
+              <a href="javascript:void(0);" onclick="filterPosts('testing')">testing</a>
+            </li>
+          
+        </ul>
+        <form>
+          <input type="text" id="search" placeholder="Search Posts">
+        </form>
+      </div>
+      <div id="results">
+        
+        1 Results
+      </div>
     </div>
-    <div id="results">
-      999 Results
+    <div class="postContainer">
+      <ul class="postList">
+        
+          <li data-tags="idk,test">
+            <div class="post">
+              <div class="postTopBar">
+                <h3>March 19, 2025</h3>
+                
+                  <ul class="postTags">
+                    
+                      <li>
+                        <h3><strong>#idk,</strong></h3>
+                      </li>
+                    
+                      <li>
+                        <h3><strong>#test</strong></h3>
+                      </li>
+                    
+                  </ul>
+                
+              </div>
+              <div class="postContentContainer">
+                <div class="postContent">
+                  <div class="postTitles">
+                    <a href="/Kelexer1/blog/2025/03/19/test3.html" class="postTitle">Test post thingy third edition</a>
+                    <h3 class="postSubtitle">subtitle 2!</h3>
+                  </div>
+                  <div class="postExerpt">
+                    <p>and wow this is ANOTHER ANOTHER post with TAGS!</p>
+
+                  </div>
+                </div>
+                <div class="postContentImage" style="background-image: url('https://images.pexels.com/photos/206359/pexels-photo-206359.jpeg?cs=srgb&dl=pexels-pixabay-206359.jpg&fm=jpg');"></div>
+              </div>
+            </div>
+            <hr>
+          </li>
+        
+          <li data-tags="">
+            <div class="post">
+              <div class="postTopBar">
+                <h3>March 11, 2025</h3>
+                
+                  <ul class="postTags">
+                    
+                  </ul>
+                
+              </div>
+              <div class="postContentContainer">
+                <div class="postContent">
+                  <div class="postTitles">
+                    <a href="/Kelexer1/blog/2025/03/11/test.html" class="postTitle">Test post thingy</a>
+                    <h3 class="postSubtitle"></h3>
+                  </div>
+                  <div class="postExerpt">
+                    <p>Hi, this is a test post, I dont really know what to put here</p>
+
+                  </div>
+                </div>
+                <div class="postContentImage" style="background-image: url('');"></div>
+              </div>
+            </div>
+            <hr>
+          </li>
+        
+          <li data-tags="testing,blog_stuff">
+            <div class="post">
+              <div class="postTopBar">
+                <h3>March 11, 2025</h3>
+                
+                  <ul class="postTags">
+                    
+                      <li>
+                        <h3><strong>#testing,</strong></h3>
+                      </li>
+                    
+                      <li>
+                        <h3><strong>#blog_stuff</strong></h3>
+                      </li>
+                    
+                  </ul>
+                
+              </div>
+              <div class="postContentContainer">
+                <div class="postContent">
+                  <div class="postTitles">
+                    <a href="/Kelexer1/blog/2025/03/11/test2.html" class="postTitle">Test post thingy 2</a>
+                    <h3 class="postSubtitle">subtitle!</h3>
+                  </div>
+                  <div class="postExerpt">
+                    <p>and wow this is ANOTHER post with TAGS!</p>
+
+                  </div>
+                </div>
+                <div class="postContentImage" style="background-image: url('https://images.pexels.com/photos/206359/pexels-photo-206359.jpeg?cs=srgb&dl=pexels-pixabay-206359.jpg&fm=jpg');"></div>
+              </div>
+            </div>
+            <hr>
+          </li>
+        
+      </ul>
     </div>
-  </div>
-  <div class="postContainer">
-    <ul class="postList">
-      
-        <li>
-          <div class="post">
-            <div class="postTopBar">
-              <h3>2025-03-11 00:00:00 -0400</h3>
-              
-                <ul class="postTags">
-                  
-                </ul>
-              
-            </div>
-            <div class="postContentContainer">
-              <div class="postContent">
-                <div class="postTitles">
-                  <a href="/Kelexer1/blog/2025/03/11/test.html" class="postTitle">Test post thingy</a>
-                  <h3 class="postSubtitle"></h3>
-                </div>
-                <div class="postExerpt">
-                  <p>Hi, this is a test post, I dont really know what to put here</p>
-
-                </div>
-              </div>
-              <div class="postContentImage" style="background-image: url('');"></div>
-            </div>
-          </div>
-        </li>
-        <hr>
-      
-        <li>
-          <div class="post">
-            <div class="postTopBar">
-              <h3>2025-03-11 00:00:00 -0400</h3>
-              
-                <ul class="postTags">
-                  
-                    <li>
-                      <h3><strong>testing,</strong></h3>
-                    </li>
-                  
-                    <li>
-                      <h3><strong>blog_stuff</strong></h3>
-                    </li>
-                  
-                </ul>
-              
-            </div>
-            <div class="postContentContainer">
-              <div class="postContent">
-                <div class="postTitles">
-                  <a href="/Kelexer1/blog/2025/03/11/test2.html" class="postTitle">Test post thingy 2</a>
-                  <h3 class="postSubtitle">subtitle!</h3>
-                </div>
-                <div class="postExerpt">
-                  <p>and wow this is ANOTHER post with TAGS!</p>
-
-                </div>
-              </div>
-              <div class="postContentImage" style="background-image: url('https://images.pexels.com/photos/206359/pexels-photo-206359.jpeg?cs=srgb&dl=pexels-pixabay-206359.jpg&fm=jpg');"></div>
-            </div>
-          </div>
-        </li>
-        <hr>
-      
-    </ul>
-  </div>
+    <script src="js/blog.js"></script>
+  </body>
 </html>
         </body>
     </main>

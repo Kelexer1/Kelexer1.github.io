@@ -12,6 +12,7 @@ hr {
 }
 
 .filterBar {
+    position: relative;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -19,6 +20,28 @@ hr {
     padding: 2rem;
     padding-bottom: 0.5rem;
     font-size: 16px;
+}
+
+.tagFilters {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #20232e;
+    border-radius: 5px;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    box-sizing: border-box;
+    list-style: none;
+    align-items: center;
+    display: none;
+    z-index: 3;
+}
+
+.tagFilters.enabled {
+    display: flex;
+    flex-direction: column;
 }
 
 #results {
@@ -33,6 +56,7 @@ hr {
 }
 
 #filterButton {
+    position: relative;
     background-color: #20232e;
     border: none;
     text-decoration: none;
