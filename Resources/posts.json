@@ -6,7 +6,7 @@ layout: none
     {% for post in site.posts %}
         {
             {% capture post_url %}{{ site.baseurl }}{{ post.url | remove: '.html' }}{% endcapture %}
-            "url": {{ post_url | append: '/' | jsonify }},
+            "url": {{ post_url | jsonify }},
 
             {% if post.image %}
                 {% if post.image contains 'http' %}
