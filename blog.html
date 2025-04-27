@@ -7,67 +7,61 @@ description: My Blog
 <html>
   <head>
     <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="blog.css">
+    <link rel="stylesheet" href="{{ site.baseurl }}/css/blog.css">
+    <script>
+      var baseurl = "{{ site.baseurl }}";
+    </script>
   </head>
   <body>
-    <div class="toolBar">
-      <div class="filterBar">
-        <button id="filterButton" onclick="showFilterMenu()">☰ Tag Filters</button>
-        <ul class="tagFilters">
-          <li>
-            <a href="javascript:void(0);" onclick="filterPosts('All Posts')">All Posts</a>
-          </li>
-          {% assign tags = site.tags | sort %}
-          {% for tag in tags %}
-            <li>
-              <a href="javascript:void(0);" onclick="filterPosts('{{ tag[0] }}')">{{ tag[0] }}</a>
-            </li>
-          {% endfor %}
-        </ul>
-        <form>
-          <input type="text" id="search" placeholder="Search Posts">
-        </form>
+    <div id="blogContent">
+      <div id="toolBar">
+        <div id="filters">
+          <select id="tagFilters" aria-label="Filter posts by tag">
+            <option value="">All Tags</option>
+            <!-- Other tags will be automatically filled -->
+          </select>
+          <input
+            type="text"
+            id="tagSearch"
+            placeholder="Search Posts..."
+            aria-label="Filter by posts containing specific content"
+          />
+        </div>
+        <div id="result">
+          <span id="resultsCount"></span>
+          Results
+        </div>
       </div>
-      <div id="results">
-        {% assign filtered_posts = site.posts | where_exp: "post", "post.tags contains 'testing'" %}
-        {{ filtered_posts.size}} Results
+      <div id="postContainer">
+        <!-- Posts will be dynamically inserted here -->
       </div>
+      <script src="{{ site.baseurl }}/js/blog.js"></script>
     </div>
-    <div class="postContainer">
-      <ul class="postList">
-        {% for post in site.posts %}
-          <li data-tags="{{ post.tags | join: ',' }}">
-            <div class="post">
-              <div class="postTopBar">
-                <h3>{{ post.date | date: "%B %d, %Y" }}</h3>
-                {% if post.tags %}
-                  <ul class="postTags">
-                    {% for tag in post.tags %}
-                      <li>
-                        <h3><strong>#{{ tag }}{% unless forloop.last %},{% endunless %}</strong></h3>
-                      </li>
-                    {% endfor %}
-                  </ul>
-                {% endif %}
-              </div>
-              <div class="postContentContainer">
-                <div class="postContent">
-                  <div class="postTitles">
-                    <a href="{{ site.baseurl}}{{ post.url }}" class="postTitle">{{ post.title }}</a>
-                    <h3 class="postSubtitle">{{ post.subtitle }}</h3>
-                  </div>
-                  <div class="postExerpt">
-                    {{ post.excerpt }}
-                  </div>
-                </div>
-                <div class="postContentImage" style="background-image: url('{{ post.image }}');"></div>
-              </div>
-            </div>
-            <hr>
-          </li>
-        {% endfor %}
-      </ul>
-    </div>
-    <script src="js/blog.js"></script>
   </body>
 </html>
+
+<template id="post-template">
+  <div class="post">
+      <div class="post-topbar">
+          <!-- Date -->
+          <h3 class="post-date"></h3>
+          <!-- Tags -->
+          <ul class="post-tags"></ul>
+      </div>
+      <div class="post-card">
+          <div class="post-content">
+              <div class="post-titles">
+                  <!-- Primary Title -->
+                  <h2 class="post-title"><a href=""></a></h2>
+                  <!-- Subtitle -->
+                  <h3 class="post-subtitle"></h3>
+              </div>
+              <!-- Excerpt -->
+              <div class="post-excerpt"></div>
+          </div>
+          <!-- Background  -->
+          <div class="post-image"></div>
+      </div>
+  </div>
+  <hr>
+</template>

@@ -118,13 +118,12 @@ body {
     </style>
     <body>
         <div class="NavBar">
-            <img src="Resources/Trinket Labs Logo.svg" alt="Logo" id="Logo"/>
+            <img src="/Kelexer1/Resources/KelexerLogo.svg" alt="Logo" id="Logo"/>
             <div class="hamburger" onclick="toggleMenu()">☰</div>
             <ul id="navmenu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="notimplemented.html">Portfolio</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="aboutme.html">About Me</a></li>
+                <li><a href="/Kelexer1/">Home</a></li>
+                <li><a href="/Kelexer1/blog">Blog</a></li>
+                <li><a href="/Kelexer1/aboutme">About Me</a></li>
             </ul>
         </div>
         <script>
@@ -140,8 +139,8 @@ body {
             <!DOCTYPE html>
 <html lang="en">
     <head>
-        <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="index.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/index.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
         <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     </head>
@@ -406,7 +405,7 @@ body {
 
         const links = socialLinks.map(site => ({ source: "My Contacts", target: site.name }));
 
-        const nodes = [{ id: "My Contacts", icon: "Resources/Trinket Labs Logo.svg", fx: width / 2, fy: height / 2 }, ...socialLinks.map((site, i) => {
+        const nodes = [{ id: "My Contacts", icon: "/Kelexer1/Resources/KelexerLogo.svg", fx: width / 2, fy: height / 2 }, ...socialLinks.map((site, i) => {
             const angle = (i / socialLinks.length) * 2 * Math.PI;
             return {
                 id: site.name,
