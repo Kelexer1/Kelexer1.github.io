@@ -118,12 +118,12 @@ body {
     </style>
     <body>
         <div class="NavBar">
-            <img src="/Kelexer1/Resources/KelexerLogo.svg" alt="Logo" id="Logo"/>
+            <img src="/Resources/KelexerLogo.svg" alt="Logo" id="Logo"/>
             <div class="hamburger" onclick="toggleMenu()">☰</div>
             <ul id="navmenu">
-                <li><a href="/Kelexer1/">Home</a></li>
-                <li><a href="/Kelexer1/blog">Blog</a></li>
-                <li><a href="/Kelexer1/aboutme">About Me</a></li>
+                <li><a href="/">Home</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="/aboutme">About Me</a></li>
             </ul>
         </div>
         <script>
@@ -405,7 +405,7 @@ body {
 
         const links = socialLinks.map(site => ({ source: "My Contacts", target: site.name }));
 
-        const nodes = [{ id: "My Contacts", icon: "/Kelexer1/Resources/KelexerLogo.svg", fx: width / 2, fy: height / 2 }, ...socialLinks.map((site, i) => {
+        const nodes = [{ id: "My Contacts", icon: "/Resources/KelexerLogo.svg", fx: width / 2, fy: height / 2 }, ...socialLinks.map((site, i) => {
             const angle = (i / socialLinks.length) * 2 * Math.PI;
             return {
                 id: site.name,
