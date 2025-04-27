@@ -1,0 +1,39 @@
+---
+layout: none
+---
+
+<ul class="postList">
+  {% for post in site.posts %}
+    <li data-tags="{{ post.tags | join: ' ' }}">
+      <div class="post">
+        <div class="postTopBar">
+          <h3>{{ post.date | date: "%B %d, %Y" }}</h3>
+          {% if post.tags %}
+            <ul class="postTags">
+              {% for tag in post.tags %}
+                <li><h3><strong>#{{ tag }}</strong></h3></li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        </div>
+        <div class="postContentContainer">
+          <div class="postContent">
+            <div class="postTitles">
+              <a href="{{ site.baseurl }}{{ post.url }}" class="postTitle">{{ post.title }}</a>
+              {% if post.subtitle %}
+                <h3 class="postSubtitle">{{ post.subtitle }}</h3>
+              {% endif %}
+            </div>
+            {% if post.excerpt %}
+              <div class="postExcerpt">{{ post.excerpt }}</div>
+            {% endif %}
+          </div>
+          {% if post.image %}
+            <div class="postContentImage" style="background-image: url('{{ post.image }}');"></div>
+          {% endif %}
+        </div>
+      </div>
+      <hr>
+    </li>
+  {% endfor %}
+</ul>

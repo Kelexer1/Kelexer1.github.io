@@ -4,3 +4,4 @@ url: "http://kelexer1.github.io"
 sass:
   sass_dir: _sass
   style: compressed
+excerpt_separator: "<!--more-->"

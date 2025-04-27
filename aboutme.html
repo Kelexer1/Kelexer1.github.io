@@ -7,7 +7,7 @@ description: About Me
 <!DOCTYPE html>
 <head>
     <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="aboutme.css">
+    <link rel="stylesheet" href="css/aboutme.css">
 </head>
 <html>
 <body>
@@ -76,7 +76,7 @@ description: About Me
                 </div>
                 <div class="card">
                     <div class="cardTitle"><h2>Programming (2021)</h2></div>
-                    <img src="Resources/Trinket Labs Logo.svg">
+                    <img src="{{ site.baseurl }}/Resources/KelexerLogo.svg">
                     <div class="cardBlurb"><p>I started programming when I started making games in 2021</p></div>
                 </div>
             </div>
@@ -128,6 +128,11 @@ description: About Me
                     <img src="Resources/icon-cv2.png">
                     <div class="cardBlurb"><p>Cv2 is also Rec Room's proprietary language that is most comparable to C#, but node based. It was my first coding language that I learned by locking myself in a room and making a game</p></div>
                 </div>
+                <div class="card">
+                    <div class="cardTitle"><h2>Assembly (2025)</h2></div>
+                    <img src="https://user-images.githubusercontent.com/103866722/194773833-8571f323-4fa8-4036-a51c-57b9d29c683b.svg">
+                    <div class="cardBlurb"><p>I am actively self teaching NASM x86 assembly using Linux, specifically for the purpose of learning reverse engineering and furthering my cybersecurity knowledge</p></div>
+                </div>
             </div>
             <div class="cardContainer persistentCards"></div>
             <div class="cardContainer toggleableCards" data-section="Programming Languages"></div>
@@ -137,15 +142,20 @@ description: About Me
     <!-- Favourite Video Games -->
     <div class="section">
         <div class="sectionHeader">
-            <div class="sectionTitle"><p2>My Favourite Video Games</p2></div>
-            <div class="sectionExpand"><button onclick="sectionExpand('Favourite Video Games')">&gt;</button></div>
+            <div class="sectionTitle"><p2>My Favourite Games</p2></div>
+            <div class="sectionExpand"><button onclick="sectionExpand('Favourite Games')">&gt;</button></div>
         </div>
         <div class="cardSection">
             <div class="cardContainer allCards">
                 <div class="card">
+                    <div class="cardTitle"><h2>Pokemon TCG: Pocket</h2></div>
+                    <img src="https://tcgpocket.pokemon.com/images/meta/en/share-tw.jpg">
+                    <div class="cardBlurb"><p>I've gotten into it recently, and it is very addictive, would recommend</p></div>
+                </div>
+                <div class="card">
                     <div class="cardTitle"><h2>Rec Room</h2></div>
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRASZerw2zgXA7RIiTL5Fg-tZ8a_TYz6JZ8nA&s">
-                    <div class="cardBlurb"><p>Rec Room is a social VR and flatscreen game where you can play thousand of player-made games with friends, or make your own. The game is not in a great state right now but it carried me through the pandemic, plus I enjoy making content on it and talking to people</p></div>
+                    <div class="cardBlurb"><p>Rec Room is a social VR/screen game where you can play thousand of player-made games with friends, or make your own. The game is not in a great state right now, but I enjoy making content on it and talking to people</p></div>
                 </div>
                 <div class="card">
                     <div class="cardTitle"><h2>Clash Royale</h2></div>
@@ -170,27 +180,27 @@ description: About Me
                 <div class="card">
                     <div class="cardTitle"><h2>Terraria</h2></div>
                     <img src="https://forums.terraria.org/index.php?attachments/icon-png.280655/">
-                    <div class="cardBlurb"><p>Terraria is very nostalgic to me, and I go through a Terraria phase once per year it seems</p></div>
+                    <div class="cardBlurb"><p>Terraria is very nostalgic to me, and I go through a Terraria phase roughly once per year it seems</p></div>
                 </div>
                 <div class="card">
                     <div class="cardTitle"><h2>Doom Eternal</h2></div>
                     <img src="https://sm.ign.com/ign_za/cover/d/doom-etern/doom-eternal_9k4c.jpg">
-                    <div class="cardBlurb"><p>Punchy punchy shooty shooty testoserone up up!</p></div>
+                    <div class="cardBlurb"><p>I got it a few summers ago, it's pretty fun. I'm also excited about the new DOOM game releasing May 2025</p></div>
                 </div>
                 <div class="card">
                     <div class="cardTitle"><h2>Blade and Sorcery</h2></div>
                     <img src="https://discord.do/wp-content/uploads/2023/12/Blade-Sorcery.jpg">
-                    <div class="cardBlurb"><p>It's VR medieval sword fighting and spell casting, what's not to love?</p></div>
+                    <div class="cardBlurb"><p>It's basically VR medieval PVE. Swords, bows, wizardry, all the good stuff</p></div>
                 </div>
                 <div class="card">
                     <div class="cardTitle"><h2>H3VR</h2></div>
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8KO8_KoY7jFoHFUouo95044Ke2Z5VUclhdw&s">
-                    <div class="cardBlurb"><p>It's VR John Wick simulator, what's not to love?</p></div>
+                    <div class="cardBlurb"><p>Hotdogs, Horseshoes, and Hand Grenades is a VR gun sandbox game</p></div>
                 </div>
                 <div class="card">
                     <div class="cardTitle"><h2>Bloons TD 6</h2></div>
                     <img src="https://play-lh.googleusercontent.com/4te8y2It_nyY4yX5jcSEFaTDro98302l9EnSbkJyCobGUo8GWxteV_8kJ8nlXyStxw">
-                    <div class="cardBlurb"><p>Bloons TD 6 is suprisingly fun for a game about balloons lining up in an orderly queue to be popped by a chimp</p></div>
+                    <div class="cardBlurb"><p>Bloons TD 6 is surprisingly fun for a game about balloons lining up in an orderly queue to be popped by chimpanzees in quirky outfits</p></div>
                 </div>
             </div>
             <div class="cardContainer persistentCards"></div>
@@ -208,27 +218,27 @@ description: About Me
             <div class="cardContainer allCards">
                 <div class="card">
                     <div class="cardTitle"><h2>Gaming</h2></div>
-                    <img src="Resources/Trinket Labs Logo.svg">
+                    <img src="{{ site.baseurl }}/Resources/KelexerLogo.svg">
                     <div class="cardBlurb"><p>Pretty self explanatory, I like playing video games with friends in my free time</p></div>
                 </div>
                 <div class="card">
                     <div class="cardTitle"><h2>Virtual Reality</h2></div>
-                    <img src="Resources/Trinket Labs Logo.svg">
+                    <img src="{{ site.baseurl }}/Resources/KelexerLogo.svg">
                     <div class="cardBlurb"><p>I love VR and VR games, and am excited to see how this technology shapes the future</p></div>
                 </div>
                 <div class="card">
                     <div class="cardTitle"><h2>Game Development</h2></div>
-                    <img src="Resources/Trinket Labs Logo.svg">
+                    <img src="{{ site.baseurl }}/Resources/KelexerLogo.svg">
                     <div class="cardBlurb"><p>I love creating digital content that others can actively enjoy playing and using as much as I enjoy making it</p></div>
                 </div>
                 <div class="card">
                     <div class="cardTitle"><h2>Development Projects</h2></div>
-                    <img src="Resources/Trinket Labs Logo.svg">
+                    <img src="{{ site.baseurl }}/Resources/KelexerLogo.svg">
                     <div class="cardBlurb"><p>I love the opportunity to use newly acquired skills in a practical project (like this website for HTML, CSS, JS, and GitHub)</p></div>
                 </div>
                 <div class="card">
                     <div class="cardTitle"><h2>Self Teaching Stuff</h2></div>
-                    <img src="Resources/Trinket Labs Logo.svg">
+                    <img src="{{ site.baseurl }}/Resources/KelexerLogo.svg">
                     <div class="cardBlurb"><p>I think I managed to get my brain addicted to learning new stuff, so I'm constantly learning something new or applying my knowledge to a project</p></div>
                 </div>
             </div>

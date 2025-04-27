@@ -1,0 +1,67 @@
+---
+layout: default
+title: Kelexer [Blog]
+description: My Blog
+---
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ site.baseurl }}/css/blog.css">
+    <script>
+      var baseurl = "{{ site.baseurl }}";
+    </script>
+  </head>
+  <body>
+    <div id="blogContent">
+      <div id="toolBar">
+        <div id="filters">
+          <select id="tagFilters" aria-label="Filter posts by tag">
+            <option value="">All Tags</option>
+            <!-- Other tags will be automatically filled -->
+          </select>
+          <input
+            type="text"
+            id="tagSearch"
+            placeholder="Search Posts..."
+            aria-label="Filter by posts containing specific content"
+          />
+        </div>
+        <div id="result">
+          <span id="resultsCount"></span>
+          Results
+        </div>
+      </div>
+      <div id="postContainer">
+        <!-- Posts will be dynamically inserted here -->
+      </div>
+      <script src="{{ site.baseurl }}/js/blog.js"></script>
+    </div>
+  </body>
+</html>
+
+<template id="post-template">
+  <div class="post">
+      <div class="post-topbar">
+          <!-- Date -->
+          <h3 class="post-date"></h3>
+          <!-- Tags -->
+          <ul class="post-tags"></ul>
+      </div>
+      <div class="post-card">
+          <div class="post-content">
+              <div class="post-titles">
+                  <!-- Primary Title -->
+                  <h2 class="post-title"><a href=""></a></h2>
+                  <!-- Subtitle -->
+                  <h3 class="post-subtitle"></h3>
+              </div>
+              <!-- Excerpt -->
+              <div class="post-excerpt"></div>
+          </div>
+          <!-- Background  -->
+          <div class="post-image"></div>
+      </div>
+  </div>
+  <hr>
+</template>

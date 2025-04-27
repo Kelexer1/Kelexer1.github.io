@@ -1,0 +1,74 @@
+html {
+    background-color: black;
+}
+
+* {
+    color: white;
+    font-family: 'Poppins', sans-serif;
+}
+
+#content {
+    font-size: 20px;
+}
+
+#progressContainer {
+    display: none;
+    z-index: 100;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 10px;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+}
+
+#progressBar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background-color: darkcyan;
+    transition: height 0.25s ease-out;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+h2 {
+    font-size: 1.5em;
+}
+
+h3 {
+    font-size: 1.15em;
+}
+
+#content {
+    margin-left: 17rem;
+    margin-right: 17rem;
+    margin-top: 2rem;
+    margin-bottom: 0;
+}
+
+hr {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+#info {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+#info h1, #info h2, #info h3 {
+    margin: 0;
+}
+
+#info h3 {
+    margin-top: 0.4em;
+}

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<style>
+::-webkit-scrollbar {
+    display: none;
+}
+
+html {
+    scrollbar-width: none;
+}
+
+body {
+    -ms-overflow-style: none;
+}
+</style>
+<head>
+    <title>Kelexer [Blog]</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="description" content="A centralized hub for all things Kelexer">
+    <meta name="keywords" content="Kelexer, Portfolio, Blog, Bio, Biography, Hub">
+    <meta name="author" content="Kelexer">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+</head>
+    <main>
+        <header>
+            <!DOCTYPE html>
+<html lang="en">
+    <style>
+        .NavBar {
+            display: flex;
+            align-items: center;
+            padding: 0.5rem;
+            margin: 0px;
+            justify-content: space-between;
+            background-color: #20232e;
+        }
+        .NavBar ul li a {
+            color: #EDE8F5;
+            text-decoration: none;
+            transition: transform 0.5s ease;
+            display: inline-block;
+        }
+        .NavBar ul li a:hover {
+            color: #ADBBDA;
+            transform: scale(1.2);
+            transform-origin: center;
+        }
+        .NavBar ul{
+            font-family: 'Poppins', sans-serif;
+            list-style-type: none;
+            display: flex;
+            gap: 3rem;
+            padding-right: 5%;
+        }
+        .NavBar img {
+            width: 4rem;
+            margin: 0;
+        }
+        body {
+        margin: 0;
+        }
+        #Logo {
+            transition: transform 0.3s ease-out
+        }
+        #Logo:hover {
+            transform: rotate(360deg);
+        }
+
+        .hamburger {
+            display: none;
+            font-size: 2rem;
+            color: #EDE8F5;
+        }
+
+        @media (max-width: 768px) {
+            .NavBar ul {
+                display: none;
+                flex-direction: column;
+                gap: 1rem;
+                padding-right: 0;
+                width: 70vw;
+                background-color: #20232e;
+                position: absolute;
+                top: 4rem;
+                left: 50%;
+                transform: translate(-50%, 15px);
+                z-index: 1000;
+                align-items: center;
+                border-radius: 7px;
+            }
+
+            .NavBar ul li:first-child {
+                margin-top: 2rem;
+            }
+
+            .NavBar ul li:last-child {
+                margin-bottom: 2rem;
+            }
+
+            #navmenu {
+                padding: 0;
+                align-self: center;
+            }
+
+            .NavBar ul.show {
+                display: flex;
+            }
+
+            .hamburger {
+                display: block;
+                cursor: pointer;
+            }
+
+        }
+
+    </style>
+    <body>
+        <div class="NavBar">
+            <img src="/Kelexer1/Resources/KelexerLogo.svg" alt="Logo" id="Logo"/>
+            <div class="hamburger" onclick="toggleMenu()">☰</div>
+            <ul id="navmenu">
+                <li><a href="/Kelexer1/">Home</a></li>
+                <li><a href="/Kelexer1/blog">Blog</a></li>
+                <li><a href="/Kelexer1/aboutme">About Me</a></li>
+            </ul>
+        </div>
+        <script>
+            function toggleMenu() {
+                var menu = document.getElementById('navmenu');
+                menu.classList.toggle('show');
+            }
+        </script>
+    </body>
+    </html>
+        </header>
+        <body>
+            <!DOCTYPE HTML>
+<html>
+  <head>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/Kelexer1/css/blog.css">
+    <script>
+      var baseurl = "/Kelexer1";
+    </script>
+  </head>
+  <body>
+    <div id="blogContent">
+      <div id="toolBar">
+        <div id="filters">
+          <select id="tagFilters" aria-label="Filter posts by tag">
+            <option value="">All Tags</option>
+            <!-- Other tags will be automatically filled -->
+          </select>
+          <input
+            type="text"
+            id="tagSearch"
+            placeholder="Search Posts..."
+            aria-label="Filter by posts containing specific content"
+          />
+        </div>
+        <div id="result">
+          <span id="resultsCount"></span>
+          Results
+        </div>
+      </div>
+      <div id="postContainer">
+        <!-- Posts will be dynamically inserted here -->
+      </div>
+      <script src="/Kelexer1/js/blog.js"></script>
+    </div>
+  </body>
+</html>
+
+<template id="post-template">
+  <div class="post">
+      <div class="post-topbar">
+          <!-- Date -->
+          <h3 class="post-date"></h3>
+          <!-- Tags -->
+          <ul class="post-tags"></ul>
+      </div>
+      <div class="post-card">
+          <div class="post-content">
+              <div class="post-titles">
+                  <!-- Primary Title -->
+                  <h2 class="post-title"><a href=""></a></h2>
+                  <!-- Subtitle -->
+                  <h3 class="post-subtitle"></h3>
+              </div>
+              <!-- Excerpt -->
+              <div class="post-excerpt"></div>
+          </div>
+          <!-- Background  -->
+          <div class="post-image"></div>
+      </div>
+  </div>
+  <hr>
+</template>
+        </body>
+    </main>
+</html>
