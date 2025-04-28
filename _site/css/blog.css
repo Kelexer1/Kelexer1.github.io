@@ -186,3 +186,37 @@ hr {
     margin-top: 0;
 }
 
+@media (max-width: 768px) {
+    #blogContent {
+        margin-left: 1rem !important;
+        margin-right: 1rem !important;
+    }
+
+    .post-card {
+        flex-direction: column;
+    }
+
+    .post-content,
+    .post-image {
+        width: 100%;
+    }
+
+    .post-image {
+        height: 200px;
+        background-position: center;
+    }
+
+    .post-image::before {
+        background: linear-gradient(to top, rgba(0, 0, 0, 0) 0%, darkcyan 100%);
+    }
+
+    .post-titles {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
+    .post-excerpt {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+}

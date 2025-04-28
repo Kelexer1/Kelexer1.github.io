@@ -2,6 +2,25 @@
     
         {
             
+            "url": "/blog/2025/04/27/BlogDesignProcess1",
+
+            
+                
+                    "image": "/Resources/KelexerLogo.svg",
+                
+            
+
+            "date": "2025-04-27 00:00:00 -0400",
+            "tags": ["blog","website","tutorial"],
+
+            "title": "Building a blog page using Jekyll",
+            "subtitle": "How I create posts efficiently using Jekyll",
+
+            "excerpt": "In my previous post, I mainly talked about the fact that the blog part of my website was live, which is cool, but I think what’s cooler is all the juicy software and code that went into making it (excluding the hair-loss). Therefore, through the course of multiple posts, I’ll dive deeper into the how and why thought process that I used to design the blog, from UI to code, to other important des..."
+        },
+    
+        {
+            
             "url": "/blog/2025/04/26/FirstPost",
 
             
