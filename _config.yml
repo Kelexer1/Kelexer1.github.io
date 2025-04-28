@@ -1,6 +1,5 @@
 theme: jekyll-theme-minimal
 baseurl: ""
-# baseurl: "/Kelexer1"
 url: "http://kelexer1.github.io"
 sass:
   sass_dir: _sass

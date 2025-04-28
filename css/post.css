@@ -7,6 +7,24 @@ html {
     font-family: 'Poppins', sans-serif;
 }
 
+code {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: cyan;
+    padding: 0.2em 0;
+    border-radius: 4px;
+    font-family: 'Cascadia Code', 'Courier New', Courier, monospace;
+    font-size: 0.95em;
+}
+
+.highlight {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
+
+.highlight code, .highlight div, .highlight pre {
+    background-color: transparent;
+}
+
 #content {
     font-size: 20px;
 }
@@ -49,7 +67,7 @@ h3 {
     margin-left: 17rem;
     margin-right: 17rem;
     margin-top: 2rem;
-    margin-bottom: 0;
+    margin-bottom: 5rem;
 }
 
 hr {
@@ -71,4 +89,15 @@ hr {
 
 #info h3 {
     margin-top: 0.4em;
+}
+
+@media (max-width: 768px) {
+    #content {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
+    #info {
+        flex-direction: column;
+    }
 }

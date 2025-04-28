@@ -4,7 +4,9 @@ categories: blog
 image: Resources/KelexerLogo.svg
 title: First Post
 date: 2025-04-26
-tags: [blog, website]
+tags:
+    - blog
+    - website
 ---
 I was actually planning to get the blog part of my website done a couple months ago. *However*, my university decided to dump a small island worth of various assignment and thingamajigs, followed by immediately final exams. So unsurprisingly, I've been kind of busy since March 10, 2025 (Yes, it took 3 months, stop judging me).
 
