@@ -5,3 +5,8 @@ sass:
   sass_dir: _sass
   style: compressed
 excerpt_separator: "<!--more-->"
+highlighter: rogue
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
