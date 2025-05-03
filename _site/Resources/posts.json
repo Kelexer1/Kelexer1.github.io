@@ -2,6 +2,44 @@
     
         {
             
+            "url": "/blog/2025/05/02/BlogDesignProcess2",
+
+            
+                
+                    "image": "/Resources/KelexerLogo.svg",
+                
+            
+
+            "date": "2025-05-02 00:00:00 -0400",
+            "tags": ["blog","website","tutorial"],
+
+            "title": "Designing the UI of my blog",
+            "subtitle": "How I conceptualized, designed, and built the UI of my blog",
+
+            "excerpt": "In my last blog post, I talked about how I used the finalized blog to expedite the post creation process by taking advantage of tools I created, and others such as Jekyll, GitHub Pages, and Obsidian. In this post, Ill delve deeper into the front end UI design process behind the blog, from conceptualizing the UI, to making a mock UI, to creating the HTML and CSS. In my opinion, the hardest part ..."
+        },
+    
+        {
+            
+            "url": "/blog/2025/05/02/AboutAssembly",
+
+            
+                
+                    "image": "/Resources/KelexerLogo.svg",
+                
+            
+
+            "date": "2025-05-02 00:00:00 -0400",
+            "tags": ["assembly","coding","cybersecurity","selfteaching","writeup"],
+
+            "title": "About Assembly",
+            "subtitle": "My thoughts after self-teaching assembly and using it for cybersecurity",
+
+            "excerpt": "I’ve spent the past 2 weeks self teaching NASM x86 Assembly (primarily on Linux), and I wanted to share my thoughts and experiences from what I’ve learned, and how I plan to apply and further my skills. Programming languages can be ranked on a sort of scale, from high level to low level. The “higher” level a language is, the closer the syntax to human readable language. Take python for example,..."
+        },
+    
+        {
+            
             "url": "/blog/2025/04/27/BlogDesignProcess1",
 
             

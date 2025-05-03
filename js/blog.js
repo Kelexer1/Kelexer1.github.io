@@ -19,8 +19,11 @@ function populateTagFilter(posts) {
     }
   }
 
+  tagsList = Array.from(tags);
+  tagsList.sort();
+
   const tag_filter = document.getElementById('tagFilters');
-  for (tag of tags) {
+  for (tag of tagsList) {
     const option = document.createElement('option');
     option.value = tag;
     option.textContent = tag;

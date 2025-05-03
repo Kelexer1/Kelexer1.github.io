@@ -7,24 +7,6 @@ html {
     font-family: 'Poppins', sans-serif;
 }
 
-code {
-    background-color: rgba(255, 255, 255, 0.1);
-    color: cyan;
-    padding: 0.2em 0;
-    border-radius: 4px;
-    font-family: 'Cascadia Code', 'Courier New', Courier, monospace;
-    font-size: 0.95em;
-}
-
-.highlight {
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 4px;
-}
-
-.highlight code, .highlight div, .highlight pre {
-    background-color: transparent;
-}
-
 #content {
     font-size: 20px;
 }
