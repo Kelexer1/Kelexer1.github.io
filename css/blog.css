@@ -67,7 +67,7 @@ hr {
     font-size: inherit;
     width: 160px;
     padding: 10px;
-    transition: background-color 0.2s ease, border-bottom-color 0.2s ease;
+    transition: border-bottom-color 0.2s ease;
 }
 
 #tagSearch:hover {
@@ -77,7 +77,6 @@ hr {
 #tagSearch:focus {
     border-bottom-color: #a0bbda;
     outline: none;
-    background-color: #a0bbda;
 }
 
 #result {
@@ -184,6 +183,14 @@ hr {
 
 .post-excerpt p {
     margin-top: 0;
+}
+
+.post-link {
+    transition: 0.2s color ease;
+}
+
+.post-link:hover {
+    color: #a0bbda;
 }
 
 @media (max-width: 768px) {

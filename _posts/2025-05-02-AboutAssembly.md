@@ -51,7 +51,7 @@ _start:
 	MOV ebx, 0
 	INT 80h
 ```
-As you can see, assembly appears to be maybe just a *little* bit harder to read...
+As you can see, assembly appears to be maybe just a *little* bit harder to read. In fact, I wrote this program on my own, and it took 6 days to know enough about the language in order to be able to create it
 
 Assembly used to the the language that hid under my bed at night, and that was mostly reinforced by things like YouTube Shorts and Instagram Reels, where they portray assembly as the boss battle of programming languages. And don't get me wrong, I still think it is, but I can now say that the difficulty is *not* as high as media claims it to be.
 

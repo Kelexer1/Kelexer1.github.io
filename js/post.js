@@ -13,6 +13,10 @@ function updateProgressBar() {
     } else {
         progressBarContainer.style.display = 'block';
         var progress = (scrollPosition / (documentHeight - windowHeight)) * 100;
-        progressBar.style.height = progress + '%'
+        progressBar.style.height = progress + '%';
     }
+}
+
+function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth'});
 }

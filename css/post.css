@@ -29,7 +29,7 @@ html {
     left: 0;
     width: 100%;
     height: 0;
-    background-color: darkcyan;
+    background-color: #a0bbda;
     transition: height 0.25s ease-out;
 }
 
@@ -71,6 +71,26 @@ hr {
 
 #info h3 {
     margin-top: 0.4em;
+}
+
+#scrollTopContainer {
+    display: flex;
+    justify-content: center;
+}
+
+#scrollTopButton {
+    background-color: #20232e;
+    border: 0;
+    border-bottom: 2px solid transparent;
+    border-radius: 4px;
+    width: 9rem;
+    height: 3rem;
+    font-size: inherit;
+    transition: 0.2s border-bottom-color ease;
+}
+
+#scrollTopButton:hover {
+    border-bottom-color: #a0bbda;
 }
 
 @media (max-width: 768px) {
