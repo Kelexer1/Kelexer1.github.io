@@ -16,9 +16,9 @@ body {
 .card {
     width: 9.9rem;
     height: 17.6rem;
-    background-image: radial-gradient(circle, white 0%, lightgray 20%, darkcyan 100%);
+    background-image: radial-gradient(circle, white 0%, #a0bbda 20%, darkcyan 100%);
     border-radius: 5px;
-    border: 2px solid cyan;
+    border: 2px solid #20232e;
     margin-right: 0.5rem;
     margin-top: 0.25rem;
     margin-bottom: 0.25rem;
@@ -89,7 +89,7 @@ body {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    background-color: darkcyan;
+    background-color: #20232e;
     border-radius: 5px;
     margin-bottom: 0.25rem;
     color: white;
