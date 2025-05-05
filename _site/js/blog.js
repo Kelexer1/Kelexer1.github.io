@@ -89,7 +89,7 @@ function renderPosts(posts) {
   });
 
   const result = document.getElementById('resultsCount');
-  result.textContent = posts.length
+  result.textContent = posts.length;
 }
 
 // Updates the available posts based on the tags and search parameters
