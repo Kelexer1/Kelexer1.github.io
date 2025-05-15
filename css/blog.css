@@ -184,6 +184,7 @@ hr {
     position: relative;
     margin-left: 2rem;
     margin-right: 2rem;
+    margin-bottom: 2rem;
     z-index: 2;
 }
 
@@ -197,6 +198,27 @@ hr {
 
 .post-link:hover {
     color: #a0bbda;
+}
+
+#paginationContainer {
+    display: flex;
+    justify-content: center;
+}
+
+#paginationButton {
+    margin-bottom: 2rem;
+    background-color: #20232e;
+    border: 0;
+    border-bottom: 2px solid transparent;
+    border-radius: 4px;
+    width: 9rem;
+    height: 3rem;
+    font-size: inherit;
+    transition: 0.2s border-bottom-color ease;
+}
+
+#paginationButton:hover {
+    border-bottom-color: #a0bbda;
 }
 
 @media (max-width: 768px) {

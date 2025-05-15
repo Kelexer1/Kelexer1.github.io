@@ -7,7 +7,6 @@ layout: default
         <link rel="stylesheet" href="{{ site.baseurl }}/css/post.css">
         <link rel="stylesheet" href="{{ site.baseurl }}/css/syntax.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/cascadia-code@latest/index.css">
-        <script src="{{ site.baseurl }}/js/post.js"></script>
     </head>
     <body>
         <div id="progressContainer">
@@ -18,6 +17,7 @@ layout: default
                 <div id="titles">
                     <h1>{{ page.title }}</h1>
                     <h2>{{ page.subtitle }}</h2>
+                    <h3 id="post-tags"></h3>
                 </div>
                 <h3>Posted on {{ page.date | date: "%B %d, %Y" }}</h3>
             </div>
@@ -33,4 +33,6 @@ layout: default
             </div>
         </section>
     </body>
+    <script>var tags = {{ page.tags | jsonify }};</script>
+    <script src="{{ site.baseurl }}/js/post.js"></script>
 </html>

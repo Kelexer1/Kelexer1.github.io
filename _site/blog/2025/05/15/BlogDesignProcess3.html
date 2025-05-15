@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+<style>
+html {
+    scrollbar-width: none;
+}
+
+body {
+    -ms-overflow-style: none;
+}
+</style>
+<head>
+    <title>Dynamic blog post filtering using Jekyll</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="description" content="A centralized hub for all things Kelexer">
+    <meta name="keywords" content="Kelexer, Portfolio, Blog, Bio, Biography, Hub">
+    <meta name="author" content="Kelexer">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="layoutContentContainer">
+        <div id="contentOverlay">
+            <header>
+                <!DOCTYPE html>
+<html lang="en">
+    <style>
+        .NavBar {
+            display: flex;
+            align-items: center;
+            padding: 0.5rem;
+            margin: 0px;
+            justify-content: space-between;
+            background-color: #20232e;
+        }
+        .NavBar ul li a {
+            color: #EDE8F5;
+            text-decoration: none;
+            transition: transform 0.5s ease;
+            display: inline-block;
+        }
+        .NavBar ul li a:hover {
+            color: #a0bbda;
+            transform: scale(1.2);
+            transform-origin: center;
+        }
+        .NavBar ul{
+            font-family: 'Poppins', sans-serif;
+            list-style-type: none;
+            display: flex;
+            gap: 3rem;
+            padding-right: 5%;
+        }
+        .NavBar img {
+            width: 4rem;
+            margin: 0;
+        }
+        body {
+        margin: 0;
+        }
+        #Logo {
+            transition: transform 0.3s ease-out
+        }
+        #Logo:hover {
+            transform: rotate(360deg);
+        }
+
+        .hamburger {
+            display: none;
+            font-size: 2rem;
+            color: #EDE8F5;
+        }
+
+        @media (max-width: 768px) {
+            .NavBar ul {
+                display: none;
+                flex-direction: column;
+                gap: 1rem;
+                padding-right: 0;
+                width: 70vw;
+                background-color: #20232e;
+                position: absolute;
+                top: 4rem;
+                left: 50%;
+                transform: translate(-50%, 15px);
+                z-index: 1000;
+                align-items: center;
+                border-radius: 7px;
+            }
+
+            .NavBar ul li:first-child {
+                margin-top: 2rem;
+            }
+
+            .NavBar ul li:last-child {
+                margin-bottom: 2rem;
+            }
+
+            #navmenu {
+                padding: 0;
+                align-self: center;
+            }
+
+            .NavBar ul.show {
+                display: flex;
+            }
+
+            .hamburger {
+                display: block;
+                cursor: pointer;
+            }
+
+        }
+
+    </style>
+    <body>
+        <div class="NavBar">
+            <img src="/Resources/KelexerLogo.svg" alt="Logo" id="Logo"/>
+            <div class="hamburger" onclick="toggleMenu()">☰</div>
+            <ul id="navmenu">
+                <li><a href="/">Home</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="/aboutme">About Me</a></li>
+            </ul>
+        </div>
+        <script>
+            function toggleMenu() {
+                var menu = document.getElementById('navmenu');
+                menu.classList.toggle('show');
+            }
+        </script>
+    </body>
+    </html>
+            </header>
+            <main>
+                <html>
+    <head>
+        <link rel="stylesheet" href="/css/post.css">
+        <link rel="stylesheet" href="/css/syntax.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/cascadia-code@latest/index.css">
+    </head>
+    <body>
+        <div id="progressContainer">
+            <div id="progressBar"></div>
+        </div>
+        <section id="content">
+            <div id="info">
+                <div id="titles">
+                    <h1>Dynamic blog post filtering using Jekyll</h1>
+                    <h2>How I implemented a dynamic post fetching system for my blog</h2>
+                    <h3 id="post-tags"></h3>
+                </div>
+                <h3>Posted on May 15, 2025</h3>
+            </div>
+            <hr>
+            <article>
+                <p>In my last post in this 4 part series, I talked about how I conceptualized, designed, and implemented the UI for my blog page using various techniques and tools. This post, I will shift from the front end design of the blog page, and instead focus more on the backend code that makes the entire page function.</p>
+
+<p>Technically, you don’t <em>need</em> to use any sort of JavaScript to deploy a functioning blog page. Jekyll has built in tools for blogging that includes pagination, and other forms of organizing your posts (which are also automatically generated). However, I mentioned earlier that I wanted to implement various forms of content filtering so that readers could easily locate specific groups of posts. Additionally, I wanted to include pagination on top of this specification, which rendered Jekyll’s default pagination tool useless. I’ll document filtering and pagination separately, starting with filtering.</p>
+
+<p>In my blog, I wanted to be able to filter by text (whether the phrase was in the title, or the excerpt) along with tags (useful to find all posts that fit a specific category). Additionally, I wanted my implementation to be easily scalable should I wish to add another filter type in the future (ex. by date range). The solution to both these problems was to develop a central filtering system that could be accessed by a specific filter. This system would take the bulk of the processing off the filter, which would become more of a container that stored its specific date (like the tag that should be filtered by). Using JS, this is a fairly straight forward task. By reading the data on each of the filters, we can use an anonymous function consisting of a compound boolean expression to determine whether a specific post meets the criteria to be displayed to the reader. Then, by iterating over all of the possible posts metadata (a collection of the posts basic information like title etc.), we can quickly get a list of all the posts that meet the criteria to be displayed whenever a filter has its value changed. Below is an annotated copy of the post updating function:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">updatePosts</span><span class="p">()</span> <span class="p">{</span>
+  <span class="c1">// Find the search bar and tag menu elements for later use</span>
+  <span class="kd">const</span> <span class="nx">search_value</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">tagSearch</span><span class="dl">'</span><span class="p">).</span><span class="nx">value</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">();</span>
+  <span class="kd">const</span> <span class="nx">selected_tag</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">tagFilters</span><span class="dl">'</span><span class="p">).</span><span class="nx">value</span><span class="p">;</span>
+
+  <span class="c1">// Collect all posts based on if the post meets the criteria for being displayed</span>
+  <span class="kd">const</span> <span class="nx">filtered</span> <span class="o">=</span> <span class="nx">all_posts</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">post</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="c1">// Check if the search data is found in the title, subtitle, or excerpt</span>
+    <span class="kd">const</span> <span class="nx">matchesContent</span> <span class="o">=</span> <span class="p">(</span>
+      <span class="nx">post</span><span class="p">.</span><span class="nx">title</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">().</span><span class="nx">includes</span><span class="p">(</span><span class="nx">search_value</span><span class="p">)</span> <span class="o">||</span>
+      <span class="nx">post</span><span class="p">.</span><span class="nx">subtitle</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">().</span><span class="nx">includes</span><span class="p">(</span><span class="nx">search_value</span><span class="p">)</span> <span class="o">||</span>
+      <span class="nx">post</span><span class="p">.</span><span class="nx">excerpt</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">().</span><span class="nx">includes</span><span class="p">(</span><span class="nx">search_value</span><span class="p">)</span>
+    <span class="p">);</span>
+
+    <span class="c1">// Check if the post contains the tag selected in the tag menu or if</span>
+    <span class="c1">// "All Tags" is selected</span>
+    <span class="kd">const</span> <span class="nx">matchesTag</span> <span class="o">=</span> <span class="o">!</span><span class="nx">selected_tag</span> <span class="o">||</span> <span class="nx">post</span><span class="p">.</span><span class="nx">tags</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="nx">selected_tag</span><span class="p">);</span>
+
+    <span class="c1">// Checks if both the tags and content are cleared</span>
+    <span class="k">return</span> <span class="nx">matchesContent</span> <span class="o">&amp;&amp;</span> <span class="nx">matchesTag</span><span class="p">;</span>
+  <span class="p">});</span>
+
+  <span class="c1">// Update the available posts variable, which stores *all* the posts that can</span>
+  <span class="c1">// be displayed, possibly through pagination</span>
+  <span class="nx">available_posts</span> <span class="o">=</span> <span class="nx">filtered</span><span class="p">.</span><span class="nx">slice</span><span class="p">();</span>
+
+  <span class="c1">// Clears the post feed</span>
+  <span class="nx">clearPostFeed</span><span class="p">();</span>
+
+  <span class="c1">// Renders the first page of the new posts</span>
+  <span class="nx">renderPosts</span><span class="p">(</span><span class="nx">available_posts</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Before I talk about the pagination system, it’s important to cover the rendering system that actually takes the post metadata and assembles the post HTML element that will be shown, before actually adding it the the screen. Every time the posts that should be displayed change, a call is made to a function, which is responsible for adding the posts to the page. The way it does this is by making a clone of a template element defined in the source HTML. This template has all its components labelled for easy access by the code. Then, the code works through each of the metadata properties, and fills in its corresponding data field component. What we are left with is a reference to a correctly assembled HTML element, but it hasn’t been displayed yet. The solution to this is to simply select the post container element defined in the source HTML, and append the created post card to it. The end result is a clean UI containing all the correctly formatted posts. Below is an annotated copy of the post rendering function:</p>
+
+<p>Now, my custom pagination implementation consists mainly of modifying the rendering system. By counting the “page” the user should be on, we can render more posts as the user clicks a button at the bottom of the page. When the button is clicked, the current page is incremented by one, and this value is used in the post rendering function to how many of the available posts should be rendered, which is simply equal to <code class="language-plaintext highlighter-rouge">min(available_posts, current_page * POSTS_PER_PAGE)</code>. For added efficiency, we only render the posts that are considered “new”, which avoids the rerendering of all the posts that have already been added. The only drawback with this is that the posts need to be manually cleared every time a filter is changed, though this is only a couple added lines and a simple clear function. Below is a copy of the rendering function complete with the pagination implementation:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">renderPosts</span><span class="p">(</span><span class="nx">posts</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">post_container</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">postContainer</span><span class="dl">'</span><span class="p">);</span>
+  <span class="kd">const</span> <span class="nx">post_template</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">post-template</span><span class="dl">'</span><span class="p">);</span>
+  <span class="kd">const</span> <span class="nx">currently_loaded_posts</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByClassName</span><span class="p">(</span><span class="dl">'</span><span class="s1">post</span><span class="dl">'</span><span class="p">).</span><span class="nx">length</span><span class="p">;</span>
+
+  <span class="nx">posts_to_render</span> <span class="o">=</span> <span class="nx">posts</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="nx">currently_loaded_posts</span><span class="p">,</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">min</span><span class="p">(</span><span class="nx">posts</span><span class="p">.</span><span class="nx">length</span><span class="p">,</span> <span class="nx">loaded_pages</span> <span class="o">*</span> <span class="nx">POSTS_PER_PAGE</span><span class="p">));</span>
+
+  <span class="c1">// Render all required posts</span>
+  <span class="nx">posts_to_render</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">post</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">template_clone</span> <span class="o">=</span> <span class="nx">post_template</span><span class="p">.</span><span class="nx">content</span><span class="p">.</span><span class="nx">cloneNode</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`Rendering post: </span><span class="p">${</span><span class="nx">post</span><span class="p">.</span><span class="nx">title</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
+
+    <span class="c1">// Image</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">post</span><span class="p">[</span><span class="dl">'</span><span class="s1">image</span><span class="dl">'</span><span class="p">])</span> <span class="p">{</span>
+      <span class="kd">const</span> <span class="nx">post_image</span> <span class="o">=</span> <span class="nx">template_clone</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">.post-image</span><span class="dl">'</span><span class="p">);</span>
+      <span class="nx">post_image</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">backgroundImage</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">url(</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">post</span><span class="p">.</span><span class="nx">image</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">)</span><span class="dl">"</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// Title</span>
+    <span class="kd">const</span> <span class="nx">post_title</span> <span class="o">=</span> <span class="nx">template_clone</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">.post-title a</span><span class="dl">'</span><span class="p">);</span>
+    <span class="nx">post_title</span><span class="p">.</span><span class="nx">textContent</span> <span class="o">=</span> <span class="nx">post</span><span class="p">.</span><span class="nx">title</span><span class="p">;</span>
+    <span class="nx">post_title</span><span class="p">.</span><span class="nx">href</span> <span class="o">=</span> <span class="nx">post</span><span class="p">.</span><span class="nx">url</span><span class="p">;</span>
+
+    <span class="c1">// Subtitle</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">post</span><span class="p">[</span><span class="dl">'</span><span class="s1">subtitle</span><span class="dl">'</span><span class="p">])</span> <span class="p">{</span>
+      <span class="kd">const</span> <span class="nx">post_subtitle</span> <span class="o">=</span> <span class="nx">template_clone</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">.post-subtitle</span><span class="dl">'</span><span class="p">);</span>
+      <span class="nx">post_subtitle</span><span class="p">.</span><span class="nx">textContent</span> <span class="o">=</span> <span class="nx">post</span><span class="p">.</span><span class="nx">subtitle</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// Date</span>
+    <span class="kd">const</span> <span class="nx">post_date</span> <span class="o">=</span> <span class="nx">template_clone</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">.post-date</span><span class="dl">'</span><span class="p">);</span>
+    <span class="kd">const</span> <span class="nx">date</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="nx">post</span><span class="p">.</span><span class="nx">date</span><span class="p">);</span>
+    <span class="nx">post_date</span><span class="p">.</span><span class="nx">textContent</span> <span class="o">=</span> <span class="nx">date</span><span class="p">.</span><span class="nx">toLocaleDateString</span><span class="p">(</span><span class="dl">'</span><span class="s1">en-US</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
+      <span class="na">year</span><span class="p">:</span> <span class="dl">'</span><span class="s1">numeric</span><span class="dl">'</span><span class="p">,</span>
+      <span class="na">month</span><span class="p">:</span> <span class="dl">'</span><span class="s1">long</span><span class="dl">'</span><span class="p">,</span>
+      <span class="na">day</span><span class="p">:</span> <span class="dl">'</span><span class="s1">numeric</span><span class="dl">'</span>
+    <span class="p">});</span>
+
+    <span class="c1">// Tags</span>
+    <span class="kd">const</span> <span class="nx">post_tags</span> <span class="o">=</span> <span class="nx">template_clone</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">.post-tags</span><span class="dl">'</span><span class="p">);</span>
+    <span class="k">for</span> <span class="p">(</span><span class="nx">tag</span> <span class="k">of</span> <span class="nx">post</span><span class="p">.</span><span class="nx">tags</span><span class="p">)</span> <span class="p">{</span>
+      <span class="kd">const</span> <span class="nx">li</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="dl">'</span><span class="s1">li</span><span class="dl">'</span><span class="p">);</span>
+      <span class="kd">const</span> <span class="nx">h3</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="dl">'</span><span class="s1">h3</span><span class="dl">'</span><span class="p">);</span>
+      <span class="kd">const</span> <span class="nx">strong</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="dl">'</span><span class="s1">strong</span><span class="dl">'</span><span class="p">);</span>
+
+      <span class="nx">strong</span><span class="p">.</span><span class="nx">textContent</span> <span class="o">=</span> <span class="s2">`#</span><span class="p">${</span><span class="nx">tag</span><span class="p">}</span><span class="s2">`</span><span class="p">;</span>
+      <span class="nx">h3</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">strong</span><span class="p">);</span>
+      <span class="nx">li</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">h3</span><span class="p">);</span>
+      <span class="nx">post_tags</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">li</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="c1">// Excerpt</span>
+    <span class="kd">const</span> <span class="nx">post_excerpt</span> <span class="o">=</span> <span class="nx">template_clone</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">.post-excerpt</span><span class="dl">'</span><span class="p">);</span>
+    <span class="nx">post_excerpt</span><span class="p">.</span><span class="nx">textContent</span> <span class="o">=</span> <span class="nx">post</span><span class="p">.</span><span class="nx">excerpt</span><span class="p">;</span>
+    <span class="nx">post_container</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">template_clone</span><span class="p">);</span>
+  <span class="p">});</span>
+
+  <span class="c1">// Update result count</span>
+  <span class="kd">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">resultsCount</span><span class="dl">'</span><span class="p">);</span>
+  <span class="nx">result</span><span class="p">.</span><span class="nx">textContent</span> <span class="o">=</span> <span class="nx">posts</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
+  <span class="kd">const</span> <span class="nx">new_post_count</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByClassName</span><span class="p">(</span><span class="dl">'</span><span class="s1">post</span><span class="dl">'</span><span class="p">).</span><span class="nx">length</span><span class="p">;</span>
+
+  <span class="c1">// Disable pagination button if no more posts can be loaded</span>
+  <span class="kd">const</span> <span class="nx">paginationButtonContainer</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">paginationContainer</span><span class="dl">'</span><span class="p">);</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">new_post_count</span> <span class="o">&gt;=</span> <span class="nx">available_posts</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">paginationButtonContainer</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">none</span><span class="dl">"</span><span class="p">;</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="nx">paginationButtonContainer</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">flex</span><span class="dl">"</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Overall, I think this was my favorite part of the whole blog design process, because once this was done, the entire blog was pretty much completed, so it’s very relieving to see. If you wish to review the full source code, it can be found <a href="/js/blog.js">here</a>. That’s all for now.</p>
+
+<p>✌,<br />Thomas</p>
+
+            </article>
+            <hr>
+            <div id="scrollTopContainer">
+                <button id="scrollTopButton" onclick="scrollToTop()">
+                    Go to Start
+                </button>
+            </div>
+        </section>
+    </body>
+    <script>var tags = ["blog","website","tutorial"];</script>
+    <script src="/js/post.js"></script>
+</html>
+            </main>
+        </div>
+    </div>
+    <!-- Background animation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.waves.min.js"></script>
+    <script>
+        window.vantaEffect = null;
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const container = document.getElementById("layoutContentContainer");
+            window.vantaEffect = VANTA.WAVES({
+                el: "#layoutContentContainer",
+                mouseControls: false,
+                touchControls: false,
+                gyroControls: false,
+                minHeight: 200.00,
+                minWidth: 200.00,
+                scale: 1.00,
+                scaleMobile: 1.00,
+                color: '#000000',
+                shininess: 10.00,
+                waveHeight: 30.00,
+                waveSpeed: 0.3,
+                zoom: 1.5
+            });
+
+            if ("ResizeObserver" in window) {
+                const resizeObserver = new ResizeObserver(() => {
+                    if (window.vantaEffect?.resize) {
+                        window.vantaEffect.resize();
+                    }
+                })
+
+                resizeObserver.observe(container);
+            }
+        });
+    </script>
+</body>
+</html>

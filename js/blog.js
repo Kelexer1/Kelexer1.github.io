@@ -1,11 +1,18 @@
-let all_posts = []
+const POSTS_PER_PAGE = 3;
+
+let all_posts = [];
+let available_posts = [];
+let loaded_pages = 1;
 
 // Initializes the posts and tag filters
 async function initializePosts() {
+  // Collect all posts from posts.json
   const post_result = await fetch(baseurl + '/Resources/posts.json');
   all_posts = await post_result.json();
+  available_posts = all_posts.slice();
 
-  renderPosts(all_posts);
+  // Initialize the posts and tag filter menu
+  renderPosts(available_posts);
   populateTagFilter(all_posts);
 }
 
@@ -13,15 +20,18 @@ async function initializePosts() {
 function populateTagFilter(posts) {
   const tags = new Set();
 
+  // Collect all possible tags
   for (post of posts) {
     for (tag of post.tags) {
       tags.add(tag);
     }
   }
 
+  // Sort tags alphabetically
   tagsList = Array.from(tags);
   tagsList.sort();
 
+  // Add each tag as an option in the filter menu
   const tag_filter = document.getElementById('tagFilters');
   for (tag of tagsList) {
     const option = document.createElement('option');
@@ -36,10 +46,15 @@ function renderPosts(posts) {
   const post_container = document.getElementById('postContainer');
   const post_template = document.getElementById('post-template');
 
-  post_container.innerHTML = '';
+  const currently_loaded_posts = document.getElementsByClassName('post').length;
 
-  posts.forEach(post => {
+  posts_to_render = posts.slice(currently_loaded_posts, Math.min(posts.length, loaded_pages * POSTS_PER_PAGE));
+
+  // Render all required posts
+  posts_to_render.forEach(post => {
     const template_clone = post_template.content.cloneNode(true);
+
+    console.log(`Rendering post: ${post.title}`);
 
     // Image
     if (post['image']) {
@@ -88,12 +103,21 @@ function renderPosts(posts) {
     post_container.appendChild(template_clone);
   });
 
+  // Update result count
   const result = document.getElementById('resultsCount');
   result.textContent = posts.length;
+  const new_post_count = document.getElementsByClassName('post').length;
+
+  // Disable pagination button if no more posts can be loaded
+  const paginationButtonContainer = document.getElementById('paginationContainer');
+  if (new_post_count >= available_posts.length) {
+    paginationButtonContainer.style.display = "none";
+  } else {
+    paginationButtonContainer.style.display = "flex";
+  }
 }
 
 // Updates the available posts based on the tags and search parameters
-// Resets the available parameters if both are empty
 function updatePosts() {
   const search_value = document.getElementById('tagSearch').value.toLowerCase();
   const selected_tag = document.getElementById('tagFilters').value;
@@ -108,7 +132,21 @@ function updatePosts() {
     return matchesContent && matchesTag;
   });
 
-  renderPosts(filtered);
+  available_posts = filtered.slice();
+  clearPostFeed();
+  renderPosts(available_posts);
+}
+
+// Renders one page more worth of posts
+function loadMorePosts() {
+  loaded_pages += 1;
+  renderPosts(available_posts);
+}
+
+// Resets the current page, as well as clears the current posts
+function clearPostFeed() {
+  loaded_pages = 1;
+  document.getElementById('postContainer').innerHTML = '';
 }
 
 document.addEventListener('DOMContentLoaded', () => {

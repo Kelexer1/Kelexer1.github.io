@@ -1,5 +1,16 @@
 window.addEventListener('scroll', updateProgressBar);
 window.addEventListener('load', updateProgressBar);
+document.addEventListener('DOMContentLoaded', fillTags);
+
+function fillTags() {
+    tagElement = document.getElementById('post-tags');
+    for (let i = 0; i < tags.length; i++) {
+        tagElement.textContent += '#' + tags[i];
+        if (i < tags.length - 1) {
+            tagElement.textContent += ' ';
+        }
+    }
+}
 
 function updateProgressBar() {
     const documentHeight = document.documentElement.scrollHeight;

@@ -2,6 +2,25 @@
     
         {
             
+            "url": "/blog/2025/05/15/BlogDesignProcess3",
+
+            
+                
+                    "image": "/Resources/KelexerLogo.svg",
+                
+            
+
+            "date": "2025-05-15 00:00:00 -0400",
+            "tags": ["blog","website","tutorial"],
+
+            "title": "Dynamic blog post filtering using Jekyll",
+            "subtitle": "How I implemented a dynamic post fetching system for my blog",
+
+            "excerpt": "In my last post in this 4 part series, I talked about how I conceptualized, designed, and implemented the UI for my blog page using various techniques and tools. This post, I will shift from the front end design of the blog page, and instead focus more on the backend code that makes the entire page function. Technically, you don’t need to use any sort of JavaScript to deploy a functioning blog ..."
+        },
+    
+        {
+            
             "url": "/blog/2025/05/02/BlogDesignProcess2",
 
             

@@ -1,0 +1,254 @@
+{
+    "My Skills": [
+        {
+            "name": "Game Development (2021)",
+            "image": "https://cdn.worldvectorlogo.com/logos/unity-69.svg",
+            "blurb": "I make games inside Rec Room using their UGC tools, as well as their Unity Extension"
+        },
+        {
+            "name": "Cybersecurity (2023)",
+            "image": "https://cdn-icons-png.flaticon.com/512/2092/2092663.png",
+            "blurb": "I'm still learning about the cybersecurity industry and bettering my skills. I have a few valid Bug Bounties on my BugCrowd"
+        },
+        {
+            "name": "3D Modelling (2023)",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Blender_logo_no_text.svg/1200px-Blender_logo_no_text.svg.png",
+            "blurb": "I don't do 3D Modelling as much anymore due to lack of necessity but when I do, I use Blender"
+        },
+        {
+            "name": "GitHub (2024)",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg",
+            "blurb": "This website is on GitHub, along with my Univerity notes for all to use, as well as any other projects I decide I publish"
+        },
+        {
+            "name": "Robotics (2022)",
+            "image": "https://freesvg.org/img/gearsYellow.png",
+            "blurb": "I mainly did this in High School, as I don't have access to a lot of the equipment at home now that I've graduated"
+        },
+        {
+            "name": "Computer Engineering (2022)",
+            "image": "https://upload.wikimedia.org/wikipedia/fr/thumb/3/3b/Raspberry_Pi_logo.svg/1200px-Raspberry_Pi_logo.svg.png",
+            "blurb": "I focus more on computer software now due to lack of access to equipment and shifting interest. I have experience with Raspberry Pi, ESP-32, and Arduino Uno"
+        },
+        {
+            "name": "Linux (2023)",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Tux.svg/506px-Tux.svg.png",
+            "blurb": "I'm learning Linux at the same pace as CyberSecurity, although I still primarily use Windows"
+        },
+        {
+            "name": "Graphic Design (2022)",
+            "image": "https://cdn.iconscout.com/icon/free/png-256/free-figma-logo-icon-download-in-svg-png-gif-file-formats--technology-social-media-vol-3-pack-logos-icons-3030133.png?f=webp&w=256",
+            "blurb": "I do Graphic design using Figma to make UI and concept art for any project of mine that needs it"
+        },
+        {
+            "name": "Web Design (2023)",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/HTML5_Badge.svg/2048px-HTML5_Badge.svg.png",
+            "blurb": "I self taught HTML and CSS because I wanted to learn about websites and create them, you are looking at the results"
+        },
+        {
+            "name": "Visual Studio (2025)",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Visual_Studio_Icon_2019.svg/2060px-Visual_Studio_Icon_2019.svg.png",
+            "blurb": "I am learning Visual Studio for C++ and app development"
+        },
+        {
+            "name": "Microsoft Office",
+            "image": "https://cdn.iconscout.com/icon/free/png-256/free-microsoft-office-logo-icon-download-in-svg-png-gif-file-formats--logos-pack-icons-722717.png?f=webp&w=256",
+            "blurb": "I've been using the Office suite for most of my life for school, though I also use it for numerous other tasks like my resume"
+        },
+        {
+            "name": "Coding",
+            "image": "Resources/KelexerLogo.svg",
+            "blurb": "I started coding when I started making games in 2021"
+        }
+    ],
+    "Programming Language Proficiencies": [
+        {
+            "name": "Python (2021)",
+            "image": "https://cdn.iconscout.com/icon/free/png-256/free-python-logo-icon-download-in-svg-png-gif-file-formats--programming-language-logos-icons-1720083.png?f=webp",
+            "blurb": "I learned Python in High School, and expanded my knowledge in University"
+        },
+        {
+            "name": "Java (2022)",
+            "image": "https://www.svgrepo.com/show/303388/java-4-logo.svg",
+            "blurb": "I learned Java in High School"
+        },
+        {
+            "name": "C++ (2023)",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/1/18/ISO_C%2B%2B_Logo.svg",
+            "blurb": "I first learned basic C++ in high school for use with the Arduino Uno, and I am now self teaching it further, hoping to adopt it as my main language"
+        },
+        {
+            "name": "C# (2025)",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/b/bd/Logo_C_sharp.svg",
+            "blurb": "I self taught foundational C# so that I can quickly learn any needed concepts as needed for future projects"
+        },
+        {
+            "name": "JavaScript (2023)",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/9/99/Unofficial_JavaScript_logo_2.svg",
+            "blurb": "I self taught Java Script as part of my Web Development journey"
+        },
+        {
+            "name": "SQL (2025)",
+            "image": "https://seeklogo.com/images/A/azure-sql-database-logo-D7A32C9CD9-seeklogo.com.png",
+            "blurb": "I self taught foundational SQL so that I can quickly learn any needed concepts as needed for future projects"
+        },
+        {
+            "name": "Cv2 (2021)",
+            "image": "Resources/icon-cv2.png",
+            "blurb": "Cv2 is also Rec Room's proprietary language that is most comparable to C#, but node based. It was my first coding language that I learned by locking myself in a room and making a game"
+        },
+        {
+            "name": "Assembly (2025)",
+            "image": "https://storage.googleapis.com/replit/images/1675542358917_5e2d9d36725892a39b11cdaac23a0816.png",
+            "blurb": "I am actively self teaching NASM x86 assembly using Linux, specifically for the purpose of learning reverse engineering and furthering my cybersecurity knowledge"
+        },
+        {
+            "name": "Kotlin (2025)",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Kotlin_Icon.svg/1200px-Kotlin_Icon.svg.png",
+            "blurb": "I am actively self teaching Kotlin for android app development"
+        },
+        {
+            "name": "Dart (2025)",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/7/7e/Dart-logo.png",
+            "blurb": "I am currently self teaching Dart for android app development"
+        }
+    ],
+    "Favorite Video Games": [
+        {
+            "name": "Pokemon TCG: Pocket",
+            "image": "https://tcgpocket.pokemon.com/images/meta/en/share-tw.jpg",
+            "blurb": "I've gotten into it recently, and it is very addictive, would recommend"
+        },
+        {
+            "name": "Rec Room",
+            "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRASZerw2zgXA7RIiTL5Fg-tZ8a_TYz6JZ8nA&s",
+            "blurb": "Rec Room is a social VR/screen game where you can play thousand of player-made games with friends, or make your own. The game is not in a great state right now, but I enjoy making content on it and talking to people"
+        },
+        {
+            "name": "Clash Royale",
+            "image": "https://i.pinimg.com/736x/f0/44/83/f04483bbad609167bf64d0fd5dd7c0d8.jpg",
+            "blurb": "I'm on hiatus from mobile games, so I am not actively playing it"
+        },
+        {
+            "name": "Brawl Stars",
+            "image": "https://preview.redd.it/new-brawl-stars-logo-recreated-in-full-quality-v0-2b1uar6mhbkc1.png?width=1080&crop=smart&auto=webp&s=affe547e52f5b677df471ed313decab62aa9ca26",
+            "blurb": "I'm on hiatus from mobile games, so I am not actively playing it"
+        },
+        {
+            "name": "Phasmophobia",
+            "image": "https://images.steamusercontent.com/ugc/1848179050040022588/6029B87EDA147D5A879ABCB040C97AC7FE5F8425/?imw=512&&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false",
+            "blurb": "Phasmophobia is a game all about hunting for ghosts in various haunted locations and escaping before you're killed. I enjoy playing this in VR with friends because the chaotic nature never gets boring"
+        },
+        {
+            "name": "Minecraft",
+            "image": "https://static.wikia.nocookie.net/logopedia/images/e/e3/Minecraft_Launcher.svg",
+            "blurb": "Its Minecraft. What else is there to say? Who doesn't like Minecraft?"
+        },
+        {
+            "name": "Terraria",
+            "image": "https://forums.terraria.org/index.php?attachments/icon-png.280655/",
+            "blurb": "Terraria is very nostalgic to me, and I go through a Terraria phase roughly once per year it seems"
+        },
+        {
+            "name": "Doom Eternal",
+            "image": "https://sm.ign.com/ign_za/cover/d/doom-etern/doom-eternal_9k4c.jpg",
+            "blurb": "I got it a few summers ago, it's pretty fun. I'm also excited about the new DOOM game releasing May 2025"
+        },
+        {
+            "name": "Blade and Sorcery",
+            "image": "https://discord.do/wp-content/uploads/2023/12/Blade-Sorcery.jpg",
+            "blurb": "It's basically VR medieval PVE. Swords, bows, wizardry, all the good stuff"
+        },
+        {
+            "name": "H3VR",
+            "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8KO8_KoY7jFoHFUouo95044Ke2Z5VUclhdw&s",
+            "blurb": "Hotdogs, Horseshoes, and Hand Grenades is a VR gun sandbox game"
+        },
+        {
+            "name": "Bloons TD 6",
+            "image": "https://play-lh.googleusercontent.com/4te8y2It_nyY4yX5jcSEFaTDro98302l9EnSbkJyCobGUo8GWxteV_8kJ8nlXyStxw",
+            "blurb": "Bloons TD 6 is surprisingly fun for a game about balloons lining up in an orderly queue to be popped by chimpanzees in quirky outfits"
+        }
+    ],
+    "My Hobbies": [
+        {
+            "name": "Gaming",
+            "image": "Resources/KelexerLogo.svg",
+            "blurb": "Pretty self explanatory, I like playing video games with friends in my free time"
+        },
+        {
+            "name": "Virtual Reality",
+            "image": "Resources/KelexerLogo.svg",
+            "blurb": "I love VR and VR games, and am excited to see how this technology shapes the future"
+        },
+        {
+            "name": "Game Development",
+            "image": "Resources/KelexerLogo.svg",
+            "blurb": "I love creating digital content that others can actively enjoy playing and using as much as I enjoy making it"
+        },
+        {
+            "name": "Development Projects",
+            "image": "Resources/KelexerLogo.svg",
+            "blurb": "I love the opportunity to use newly acquired skills in a practical project (like this website for HTML, CSS, JS, and GitHub)"
+        },
+        {
+            "name": "Self Teaching Stuff",
+            "image": "Resources/KelexerLogo.svg",
+            "blurb": "I think I managed to get my brain addicted to learning new stuff, so I'm constantly learning something new or applying my knowledge to a project"
+        },
+        {
+            "name": "Badminton",
+            "image": "Resources/KelexerLogo.svg",
+            "blurb": "I like playing badminton. I don't really do it competitively, but it's still fun to play"
+        },
+        {
+            "name": "Rock Climbing",
+            "image": "Resources/KelexerLogo.svg",
+            "blurb": "I like going bouldering with friends"
+        }
+    ],
+    "My Favourite Movies and TV Shows": [
+        {
+            "name": "Invincible",
+            "image": "https://m.media-amazon.com/images/I/719nUEGliCL.jpg",
+            "blurb": "<a href=\"https://www.imdb.com/title/tt6741278/?ref_=nv_sr_srsg_0_tt_8_nm_0_in_0_q_invincible\" target=\"_blank\" rel=\"noopener noreferrer\">Check out the show</a>"
+        },
+        {
+            "name": "The Boys",
+            "image": "https://m.media-amazon.com/images/I/71mdM0xPT+L.jpg",
+            "blurb": "<a href=\"https://www.imdb.com/title/tt1190634/?ref_=fn_all_ttl_1\" target=\"_blank\" rel=\"noopener noreferrer\">Check out the show</a>"
+        },
+        {
+            "name": "Rick and Morty",
+            "image": "https://m.media-amazon.com/images/I/81YuxdsIuoL._AC_UF894,1000_QL80_.jpg",
+            "blurb": "<a href=\"https://www.imdb.com/title/tt2861424/?ref_=fn_all_ttl_1\" target=\"_blank\" rel=\"noopener noreferrer\">Check out the show</a>"
+        }
+    ],
+    "My Favorite Artists": [
+        {
+            "name": "Juice WRLD",
+            "image": "https://wp.dailybruin.com/images/2020/07/web.ae_.juicewrld.courtesy.jpg",
+            "blurb": "\"I wanna change the world.\" - Juice WRLD (1998-2021) RIP"
+        },
+        {
+            "name": "Kendrick Lamar",
+            "image": "https://e.snmc.io/i/600/s/e1dbcf54455ba5558ae77c8be1dfc7b6/12744501/kendrick-lamar-gnx-cover-art.jpg",
+            "blurb": "\"When the lights shut off, And it's my turn to settle down, My main concern, Promise that you will sing about me\" - Kendrick Lamar"
+        },
+        {
+            "name": "Eminem",
+            "image": "https://i.scdn.co/image/ab6761610000e5eba00b11c129b27a88fc72f36b",
+            "blurb": "\"Oh, you want me to watch my mouth? How? Take my _ eyeballs out and turn 'em around?\" -Eminem"
+        },
+        {
+            "name": "Tyler, The Creator",
+            "image": "https://yt3.googleusercontent.com/6TptZZu0D3iZoeDsP8zhUBv2NVNUnMQ00olfEW7yjb5XReFSI93mk6bAkAwS0ugiUyqrZfXiqw=s900-c-k-c0x00ffffff-no-rj",
+            "blurb": "\"i got too much drive i'm a terabyte\" - Tyler, The Creator"
+        },
+        {
+            "name": "SZA",
+            "image": "https://media.pitchfork.com/photos/638902d5f777c8e284615da3/1:1/w_1500,h_1500,c_limit/SZA.jpg",
+            "blurb": "\"If it was up to me, I wouldn't give these nobodies no sympathy, I'd take away the pain, I'd give you everything\" - SZA"
+        }
+    ]
+}
