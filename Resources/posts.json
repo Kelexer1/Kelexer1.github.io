@@ -18,7 +18,7 @@ layout: none
                 "image": "",
             {% endif %}
 
-            "date": {{ post.date | jsonify }},
+            "date": {{ post.date | date: '%B %e, %Y' | jsonify }},
             "tags": {{ post.tags | jsonify }},
 
             "title": {{ post.title | jsonify }},
