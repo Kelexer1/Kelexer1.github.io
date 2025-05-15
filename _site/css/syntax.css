@@ -7,6 +7,12 @@
   border-radius: 4px;
 }
 
+pre {
+  overflow-x: auto;
+  white-space: pre;
+  word-wrap: normal;
+}
+
 code span {
   border-radius: 4px;
   font-family: 'Cascadia Code', 'Courier New', Courier, monospace !important;
@@ -16,6 +22,7 @@ pre, .highlight {
   padding-left: 1em;
   padding-top: 1px;
   padding-bottom: 1px;
+  border-radius: 4px;
 }
 
 .highlight table td { padding: 5px; }
