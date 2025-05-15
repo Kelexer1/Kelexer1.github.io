@@ -75,12 +75,7 @@ function renderPosts(posts) {
 
     // Date
     const post_date = template_clone.querySelector('.post-date');
-    const date = new Date(post.date);
-    post_date.textContent = date.toLocaleDateString('en-US', {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric'
-    });
+    post_date.textContent = post.date;
 
     // Tags
     const post_tags = template_clone.querySelector('.post-tags');
