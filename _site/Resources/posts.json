@@ -2,6 +2,25 @@
     
         {
             
+            "url": "/blog/2025/05/23/BlogDesignProcess4",
+
+            
+                
+                    "image": "/Resources/KelexerLogo.svg",
+                
+            
+
+            "date": "May 23, 2025",
+            "tags": ["blog","website","tutorial"],
+
+            "title": "Designing a simple post page using Jekyll",
+            "subtitle": "How I automatically create dedicated post pages using Jekyll",
+
+            "excerpt": "This is the last of the 4 part blog documentation series that covers all important creation processes of my blog. Last post, I delved into the backend JS and JSON that automated the blog post preview rendering process, along with providing a framework for multiple post filtering elements. In this final post, I will talk about how I used Jekyll and Liquid to automatically generate full sized pag..."
+        },
+    
+        {
+            
             "url": "/blog/2025/05/15/BlogDesignProcess3",
 
             

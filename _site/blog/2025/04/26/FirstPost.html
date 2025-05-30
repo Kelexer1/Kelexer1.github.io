@@ -8,6 +8,11 @@ html {
 body {
     -ms-overflow-style: none;
 }
+
+#layoutContentContainer {
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
 </style>
 <head>
     <title>First Post</title>
@@ -194,26 +199,16 @@ Thomas</p>
                 mouseControls: false,
                 touchControls: false,
                 gyroControls: false,
-                minHeight: 200.00,
-                minWidth: 200.00,
+                minHeight: 10000.00,
+                minWidth: 768.00,
                 scale: 1.00,
                 scaleMobile: 1.00,
                 color: '#000000',
                 shininess: 10.00,
-                waveHeight: 30.00,
+                waveHeight: 7.5,
                 waveSpeed: 0.3,
-                zoom: 1.5
+                zoom: 1.0
             });
-
-            if ("ResizeObserver" in window) {
-                const resizeObserver = new ResizeObserver(() => {
-                    if (window.vantaEffect?.resize) {
-                        window.vantaEffect.resize();
-                    }
-                })
-
-                resizeObserver.observe(container);
-            }
         });
     </script>
 </body>

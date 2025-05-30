@@ -18,6 +18,11 @@ code span {
   font-family: 'Cascadia Code', 'Courier New', Courier, monospace !important;
 }
 
+pre.highlight code {
+  font-family: 'Cascadia Code', 'Courier New', Courier, monospace !important;
+  tab-size: 4;
+}
+
 pre, .highlight {
   padding-left: 1em;
   padding-top: 1px;

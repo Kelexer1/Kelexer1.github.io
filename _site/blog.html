@@ -8,6 +8,11 @@ html {
 body {
     -ms-overflow-style: none;
 }
+
+#layoutContentContainer {
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
 </style>
 <head>
     <title>Kelexer [Blog]</title>
@@ -147,10 +152,16 @@ body {
     <div id="blogContent">
       <div id="toolBar">
         <div id="filters">
-          <select id="tagFilters" aria-label="Filter posts by tag">
-            <option value="">All Tags</option>
-            <!-- Other tags will be dynamically inserted here -->
-          </select>
+          <div id="tagFilters">
+            <div id="tagFiltersToggle" role="button">Filter By Tags</div>
+            <div id="expandableContent">
+              <label><input type="button" id="clearTagFilters" value="Clear Filters" onclick="clearTagFilters()"></label>
+              <div id="tags">
+                <!-- Other tags will be dynamically inserted here -->
+              </div>
+            </div>
+          </div>
+          <br>
           <input
             type="text"
             id="tagSearch"
@@ -171,8 +182,8 @@ body {
           Load More Posts
         </button>
       </div>
-      <script src="/js/blog.js"></script>
     </div>
+    <script src="/js/blog.js"></script>
   </body>
 </html>
 
@@ -217,26 +228,16 @@ body {
                 mouseControls: false,
                 touchControls: false,
                 gyroControls: false,
-                minHeight: 200.00,
-                minWidth: 200.00,
+                minHeight: 10000.00,
+                minWidth: 768.00,
                 scale: 1.00,
                 scaleMobile: 1.00,
                 color: '#000000',
                 shininess: 10.00,
-                waveHeight: 30.00,
+                waveHeight: 7.5,
                 waveSpeed: 0.3,
-                zoom: 1.5
+                zoom: 1.0
             });
-
-            if ("ResizeObserver" in window) {
-                const resizeObserver = new ResizeObserver(() => {
-                    if (window.vantaEffect?.resize) {
-                        window.vantaEffect.resize();
-                    }
-                })
-
-                resizeObserver.observe(container);
-            }
         });
     </script>
 </body>
