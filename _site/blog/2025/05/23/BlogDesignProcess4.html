@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+<style>
+html {
+    scrollbar-width: none;
+}
+
+body {
+    -ms-overflow-style: none;
+}
+
+#layoutContentContainer {
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+</style>
+<head>
+    <title>Designing a simple post page using Jekyll</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="description" content="A centralized hub for all things Kelexer">
+    <meta name="keywords" content="Kelexer, Portfolio, Blog, Bio, Biography, Hub">
+    <meta name="author" content="Kelexer">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="layoutContentContainer">
+        <div id="contentOverlay">
+            <header>
+                <!DOCTYPE html>
+<html lang="en">
+    <style>
+        .NavBar {
+            display: flex;
+            align-items: center;
+            padding: 0.5rem;
+            margin: 0px;
+            justify-content: space-between;
+            background-color: #20232e;
+        }
+        .NavBar ul li a {
+            color: #EDE8F5;
+            text-decoration: none;
+            transition: transform 0.5s ease;
+            display: inline-block;
+        }
+        .NavBar ul li a:hover {
+            color: #a0bbda;
+            transform: scale(1.2);
+            transform-origin: center;
+        }
+        .NavBar ul{
+            font-family: 'Poppins', sans-serif;
+            list-style-type: none;
+            display: flex;
+            gap: 3rem;
+            padding-right: 5%;
+        }
+        .NavBar img {
+            width: 4rem;
+            margin: 0;
+        }
+        body {
+        margin: 0;
+        }
+        #Logo {
+            transition: transform 0.3s ease-out
+        }
+        #Logo:hover {
+            transform: rotate(360deg);
+        }
+
+        .hamburger {
+            display: none;
+            font-size: 2rem;
+            color: #EDE8F5;
+        }
+
+        @media (max-width: 768px) {
+            .NavBar ul {
+                display: none;
+                flex-direction: column;
+                gap: 1rem;
+                padding-right: 0;
+                width: 70vw;
+                background-color: #20232e;
+                position: absolute;
+                top: 4rem;
+                left: 50%;
+                transform: translate(-50%, 15px);
+                z-index: 1000;
+                align-items: center;
+                border-radius: 7px;
+            }
+
+            .NavBar ul li:first-child {
+                margin-top: 2rem;
+            }
+
+            .NavBar ul li:last-child {
+                margin-bottom: 2rem;
+            }
+
+            #navmenu {
+                padding: 0;
+                align-self: center;
+            }
+
+            .NavBar ul.show {
+                display: flex;
+            }
+
+            .hamburger {
+                display: block;
+                cursor: pointer;
+            }
+
+        }
+
+    </style>
+    <body>
+        <div class="NavBar">
+            <img src="/Resources/KelexerLogo.svg" alt="Logo" id="Logo"/>
+            <div class="hamburger" onclick="toggleMenu()">☰</div>
+            <ul id="navmenu">
+                <li><a href="/">Home</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="/aboutme">About Me</a></li>
+            </ul>
+        </div>
+        <script>
+            function toggleMenu() {
+                var menu = document.getElementById('navmenu');
+                menu.classList.toggle('show');
+            }
+        </script>
+    </body>
+    </html>
+            </header>
+            <main>
+                <html>
+    <head>
+        <link rel="stylesheet" href="/css/post.css">
+        <link rel="stylesheet" href="/css/syntax.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/cascadia-code@latest/index.css">
+    </head>
+    <body>
+        <div id="progressContainer">
+            <div id="progressBar"></div>
+        </div>
+        <section id="content">
+            <div id="info">
+                <div id="titles">
+                    <h1>Designing a simple post page using Jekyll</h1>
+                    <h2>How I automatically create dedicated post pages using Jekyll</h2>
+                    <h3 id="post-tags"></h3>
+                </div>
+                <h3>Posted on May 23, 2025</h3>
+            </div>
+            <hr>
+            <article>
+                <p>This is the last of the 4 part blog documentation series that covers all important creation processes of my blog. Last post, I delved into the backend JS and JSON that automated the blog post preview rendering process, along with providing a framework for multiple post filtering elements. In this final post, I will talk about how I used Jekyll and Liquid to automatically generate full sized pages for each post (not to be confused with the preview card on the blog page) that uses numerous new tools, such as Markdown, and Syntax Highlighting for code blocks.</p>
+
+<p>By default, Jekyll allows users to create their posts using Markdown, which I definitely prefer over HTML because when I write a post, I want to write in English, not hieroglyphics. I discussed the post creation process in the first post of this series, so I’ll omit that. However, what’s important to know is that Markdown <strong>alone</strong> is not used for the blog. In the first post of the series, I hinted at a layout being used to define the way the content should be presented to the user. This layout uses a part of Jekyll called Liquid, which allows HTML documents to dynamically output content, allowing for easy creation of posts using a common template. For example, with my current setup, a basic <code class="language-plaintext highlighter-rouge">post.html</code> setup could be the following:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
+layout: default
+---
+<span class="nt">&lt;html&gt;</span>
+	<span class="nt">&lt;head&gt;</span>
+		<span class="c">&lt;!-- Some header stuff here, not really important --&gt;</span>
+	<span class="nt">&lt;/head&gt;</span>
+	<span class="nt">&lt;body&gt;</span>
+		<span class="nt">&lt;h1&gt;</span>{{ page.title }}<span class="nt">&lt;/h1&gt;</span>
+		<span class="nt">&lt;h2&gt;</span>{{ page.subtitle }}<span class="nt">&lt;/h2&gt;</span>
+		<span class="nt">&lt;h3&gt;</span>{{ page.date }}<span class="nt">&lt;/h3&gt;</span>
+		<span class="nt">&lt;p&gt;</span>{{ content }}<span class="nt">&lt;/p&gt;</span>
+	<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<p>As you can see, a this file contains… nothing about any specific post. This is because each post is automatically assigned a file that uses this template. Recall that when making a post, I added a value into the front matter called <code class="language-plaintext highlighter-rouge">layout</code>, which was assigned a value <code class="language-plaintext highlighter-rouge">post</code>. This tells Jekyll that the posts content should be automatically inserted into the <code class="language-plaintext highlighter-rouge">post.html</code> layout when the site is built. This also means that the front matter is inserted, meaning we can access data we defined in the post, such as the title. The only difference being that we access it using the <code class="language-plaintext highlighter-rouge">page</code> prefix instead of post, like in the JavaScript part since the <em>page</em> is embedded with the values, not the object we are iterating over using JSON. The last important consideration is the <code class="language-plaintext highlighter-rouge">{{ content }}</code> element, which is, as the name suggests, the content of the post, which includes all the paragraphs, images, and code blocks. However, by default, the code blocks will have no syntax highlighting done to them, which leads me to the next portion of designing the post template: syntax highlighting.</p>
+
+<p>Syntax highlighting is ironically the harder thing to accomplish compared to creating the entire page. Just to clarify, syntax highlighting is the way code is colored to make it more organized and readable to the viewer. If I have a basic block of code that isn’t syntax highlighted in any way, it looks like this:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>for i in range(1,10):
+	if i % 2 == 0:
+		print(i)
+</code></pre></div></div>
+
+<p>This is cool, but it lacks the pizzazz and cooler coolness of bright colors that get that dopamine flowing. Here is the same code with syntax highlighting, notice it looks a lot cleaner, and if you are familiar with the source language, easier to follow:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">):</span>
+	<span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+		<span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>The problem with syntax highlighting is that there is a lot that goes on behind the scenes to parse the text code into code code so that the highlighter knows what color everything should be. Luckily, the vast majority of this can be handled by tools already made, but not included by default in Jekyll. All Jekyll sites have a file in the root folder called <code class="language-plaintext highlighter-rouge">_config.yml</code>, which acts as a settings file that Jekyll uses to determine how it should build the site, like a list of rules. In this folder, we can add the following lines:</p>
+
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">highlighter</span><span class="pi">:</span> <span class="s">rogue</span>
+<span class="na">markdown</span><span class="pi">:</span> <span class="s">kramdown</span>
+<span class="na">kramdown</span><span class="pi">:</span>
+    <span class="na">input</span><span class="pi">:</span> <span class="s">GFM</span>
+    <span class="na">syntax_highlighter</span><span class="pi">:</span> <span class="s">rogue</span>
+</code></pre></div></div>
+
+<p>This may look confusing, but once you understand what each rule does, it makes more sense. The first line sets the highlighter to be “rogue”. Rogue is a syntax highlighter that integrates well with Jekyll by default, since they are developed in the same language, <code class="language-plaintext highlighter-rouge">Ruby</code>. Rogue goes through the code block and identifies certain words and symbols according to the language the code block is defined in. For example, in the Python code block above, <code class="language-plaintext highlighter-rouge">if</code> is recognized as a keyword, and is highlighted as a conditional accordingly. The next like defines that the Kramdown should be used as the Markdown parser. Kramdown is the default parser used in Jekyll and allows certain syntax to be used, enabling things like tables, and math equations. Kramdown is essentially responsible for reading through the markdown file and converting it to an HTML file to be displayed. The last few lines are all part of the same rule, indicated by the indentation. These lines define specific settings related to Kramdown, such as enabling GitHub Flavored Markdown (GFM) as the input format. This enables additional syntax features such as multi-line code blocks, and strikethrough text. Lastly, it reinforces that Kramdown should use rogue for syntax highlighting. We need to define rogue twice because of the different contexts that each affects. The <code class="language-plaintext highlighter-rouge">highlighter</code> rule deals with site-wide highlighting, such as by using the highlight tag in Liquid:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{% highlight python %}
+print("Hello")
+{% endhighlight %}
+</code></pre></div></div>
+
+<p>On the other hand, the Kramdown indented rule <code class="language-plaintext highlighter-rouge">syntax_highlighter</code> is used for declaring that code blocks in <strong>Markdown</strong> should be highlighted using rogue, such as through ` (code here) ` syntax.</p>
+
+<p>Now, our markdown files will be automatically converted to HTML and displayed using our layout, but the code blocks will be… not colorful. This is because rogue does <em>not</em> color the code itself, instead it tags each piece of the code with specific HTML classes, which need to be styled using a <code class="language-plaintext highlighter-rouge">CSS</code> file. We can get a premade <code class="language-plaintext highlighter-rouge">CSS</code> file using a theme obtained through rogue. By installing rogue into our project using the following terminal command: <code class="language-plaintext highlighter-rouge">gem install rogue</code>, followed by <code class="language-plaintext highlighter-rouge">bundle install</code>, we can view some popular themes by running <code class="language-plaintext highlighter-rouge">rougify help style</code>. Once we settle on a nice looking theme, we can collect the <code class="language-plaintext highlighter-rouge">CSS</code> by running the following command: <code class="language-plaintext highlighter-rouge">rougify style [STYLE NAME] &gt; syntax.css</code>. This will create a file called <code class="language-plaintext highlighter-rouge">syntax.css</code> that contains all the style rules for coloring the code. Applying it to the layout is as simple as adding it to the header of the template file, which should look something like this:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;head&gt;</span>
+	<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"syntax.css"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+</code></pre></div></div>
+
+<p>Of course, you can modify the <code class="language-plaintext highlighter-rouge">CSS</code> file to add more style choices. For example, I added rounded corners to code blocks, and added a simple set of rules for code blocks without a defined language. Overall, you can change anything about the style to truly make it yours and better fit to the overall theme of your site. That’s all for now.</p>
+
+<p>✌,<br />Thomas</p>
+
+            </article>
+            <hr>
+            <div id="scrollTopContainer">
+                <button id="scrollTopButton" onclick="scrollToTop()">
+                    Go to Start
+                </button>
+            </div>
+        </section>
+    </body>
+    <script>var tags = ["blog","website","tutorial"];</script>
+    <script src="/js/post.js"></script>
+</html>
+            </main>
+        </div>
+    </div>
+    <!-- Background animation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.waves.min.js"></script>
+    <script>
+        window.vantaEffect = null;
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const container = document.getElementById("layoutContentContainer");
+            window.vantaEffect = VANTA.WAVES({
+                el: "#layoutContentContainer",
+                mouseControls: false,
+                touchControls: false,
+                gyroControls: false,
+                minHeight: 10000.00,
+                minWidth: 768.00,
+                scale: 1.00,
+                scaleMobile: 1.00,
+                color: '#000000',
+                shininess: 10.00,
+                waveHeight: 7.5,
+                waveSpeed: 0.3,
+                zoom: 1.0
+            });
+        });
+    </script>
+</body>
+</html>

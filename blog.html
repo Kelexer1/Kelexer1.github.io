@@ -16,10 +16,16 @@ description: My Blog
     <div id="blogContent">
       <div id="toolBar">
         <div id="filters">
-          <select id="tagFilters" aria-label="Filter posts by tag">
-            <option value="">All Tags</option>
-            <!-- Other tags will be dynamically inserted here -->
-          </select>
+          <div id="tagFilters">
+            <div id="tagFiltersToggle" role="button">Filter By Tags</div>
+            <div id="expandableContent">
+              <label><input type="button" id="clearTagFilters" value="Clear Filters" onclick="clearTagFilters()"></label>
+              <div id="tags">
+                <!-- Other tags will be dynamically inserted here -->
+              </div>
+            </div>
+          </div>
+          <br>
           <input
             type="text"
             id="tagSearch"
@@ -40,8 +46,8 @@ description: My Blog
           Load More Posts
         </button>
       </div>
-      <script src="{{ site.baseurl }}/js/blog.js"></script>
     </div>
+    <script src="{{ site.baseurl }}/js/blog.js"></script>
   </body>
 </html>
 

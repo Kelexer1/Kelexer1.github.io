@@ -1,4 +1,4 @@
-const POSTS_PER_PAGE = 3;
+const POSTS_PER_PAGE = 10;
 
 let all_posts = [];
 let available_posts = [];
@@ -32,12 +32,15 @@ function populateTagFilter(posts) {
   tagsList.sort();
 
   // Add each tag as an option in the filter menu
-  const tag_filter = document.getElementById('tagFilters');
+  const tag_filter = document.querySelector('#tagFilters #tags');
   for (tag of tagsList) {
-    const option = document.createElement('option');
-    option.value = tag;
-    option.textContent = tag;
-    tag_filter.appendChild(option);
+    const label = document.createElement('label');
+    const input = document.createElement('input')
+    input.type = "checkbox";
+    input.value = tag;
+    label.appendChild(input);
+    label.appendChild(document.createTextNode(tag));
+    tag_filter.appendChild(label);
   }
 }
 
@@ -53,8 +56,6 @@ function renderPosts(posts) {
   // Render all required posts
   posts_to_render.forEach(post => {
     const template_clone = post_template.content.cloneNode(true);
-
-    console.log(`Rendering post: ${post.title}`);
 
     // Image
     if (post['image']) {
@@ -115,7 +116,7 @@ function renderPosts(posts) {
 // Updates the available posts based on the tags and search parameters
 function updatePosts() {
   const search_value = document.getElementById('tagSearch').value.toLowerCase();
-  const selected_tag = document.getElementById('tagFilters').value;
+  const selected_tags = getSelectedTags();
 
   const filtered = all_posts.filter(post => {
     const matchesContent = (
@@ -123,13 +124,23 @@ function updatePosts() {
       post.subtitle.toLowerCase().includes(search_value) ||
       post.excerpt.toLowerCase().includes(search_value)
     );
-    const matchesTag = !selected_tag || post.tags.includes(selected_tag);
+
+    const matchesTag = (
+      !selected_tags ||
+      selected_tags.every(item => post.tags.includes(item))
+    );
+
     return matchesContent && matchesTag;
   });
 
   available_posts = filtered.slice();
   clearPostFeed();
   renderPosts(available_posts);
+}
+
+// Returns an array containing the tag filters currently selected in plain text
+function getSelectedTags() {
+  return Array.from(document.querySelectorAll('#tagFilters #tags input[type="checkbox"]:checked')).map(input => input.value);
 }
 
 // Renders one page more worth of posts
@@ -144,8 +155,30 @@ function clearPostFeed() {
   document.getElementById('postContainer').innerHTML = '';
 }
 
+// Unchecks all tag filters from the tag filters menu
+function clearTagFilters() {
+  const tag_filters = document.querySelectorAll('#tagFilters #tags input[type="checkbox"]:checked');
+  tag_filters.forEach(item => {
+    item.checked = false;
+  });
+  updatePosts();
+}
+
+function slideToggle(element, duration = 300) {
+  element.style.transition = `max-height ${duration}ms ease-in-out`;
+  element.style.overflow = 'hidden';
+  if (window.getComputedStyle(element).maxHeight !== '0px') {
+    element.style.maxHeight = "0";
+  } else {
+    element.style.maxHeight = element.scrollHeight + 'px';
+  }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   initializePosts();
   document.getElementById('tagFilters').addEventListener('change', updatePosts);
   document.getElementById('tagSearch').addEventListener('input', updatePosts);
+  document.getElementById('tagFiltersToggle').addEventListener('click', () => {
+    slideToggle(document.getElementById('expandableContent'));
+  });
 });
